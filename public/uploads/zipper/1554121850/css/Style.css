@@ -1,0 +1,143 @@
+body {
+    height: 797px;
+    margin: 15px auto;
+    width: 855px;
+}
+
+.start {
+    height: 797px;
+    position: absolute;
+    width: 855px;
+    z-index: 10;
+}
+
+.start h1 {
+    background-color: #FFF;
+    border-radius: 2.1px;
+    color: #000;
+    margin: 20% auto 10%;
+    padding: 20px;
+    text-align: center;
+    width: 40%;
+}
+
+.langbtn {
+    cursor: pointer;
+    margin: 25px;
+}
+
+.startico {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 25%;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 797px;
+    position: absolute;
+    width: 855px;
+    z-index: 3;
+}
+
+.act-container {
+    background-color: #ddd;
+    direction: rtl;
+    height: 797px;
+    width: 855px;
+    z-index: 5;
+}
+
+.act-container .show {
+    margin-right: 12px;
+    padding: 25px 0 0;
+}
+
+.show .showtype {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 150px;
+    padding: 0 1.2px;
+    position: relative;
+    width: 19%;
+    cursor: pointer
+}
+
+.vidimg1 {
+    background-image: url('../imgs/vid1.png');
+}
+
+.vidimg2 {
+    background-image: url('../imgs/vid2.png');
+}
+
+.vidimg3 {
+    background-image: url('../imgs/vid3.png');
+}
+
+.vidimg4 {
+    background-image: url('../imgs/vid4.png');
+}
+
+.vidimg5 {
+    background-image: url('../imgs/vid5.png');
+}
+
+.show .showtype img {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.show-video {
+    background-color: #FFF;
+    height: 510px;
+    margin: 1px auto;
+    width: 830px;
+}
+
+.buttons {
+    width: 100%
+}
+
+.container-inner {
+    display: table;
+    margin: auto;
+}
+
+.image {
+    float: left;
+    margin: 20px;
+	cursor:pointer;
+}
+
+.hide-when-start {
+    display: block;
+}
+
+.hand{
+    position: relative;
+    width: 40px;
+    height: 50px;
+    top: -13%;
+    left: 53%;
+    display: none;
+}
+.hand img{
+    position: absolute;
+    width: 100%;
+}
+.hand-from{
+    
+}
+
+.rec2Div{
+    width: 58px;
+    height: 51px;
+    top: -9%;
+    left: 52%;
+    border: 2px solid black;
+}

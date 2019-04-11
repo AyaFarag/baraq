@@ -1,0 +1,651 @@
+/******************
+-- Font Settings --
+*******************/
+
+@font-face {
+    font-family: 'AdobeNaskh-Medium';
+    src: url(../fonts/AdobeNaskh-Medium.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'RB-Regular';
+    src: url(../fonts/RB-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'RB-Bold1';
+    src: url(../fonts/RB-Bold1.ttf) format('truetype');
+}
+
+
+/*********************
+-- General Settings --
+**********************/
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    direction: rtl;
+    font-variant-ligatures: none;
+}
+
+a {
+    color: #FFF
+}
+/*
+a,
+a:hover {
+    text-decoration: none
+}
+*/
+
+
+body::-webkit-scrollbar {
+    width: 5px;
+    
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: tomato;
+    outline: 1px solid slategrey;
+}
+
+
+/*****************************************
+-- Start CSS of Navigation bar Settings --
+******************************************/
+
+#Navigation {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-image: -moz-linear-gradient(0deg, rgb(21, 177, 150) 1%, rgb(66, 179, 203) 100%);
+    background-image: -webkit-linear-gradient(0deg, rgb(21, 177, 150) 1%, rgb(66, 179, 203) 100%);
+    background-image: -ms-linear-gradient(0deg, rgb(21, 177, 150) 1%, rgb(66, 179, 203) 100%);
+}
+
+#Navigation .row .col-md-2,
+#Navigation .row .col-md-6,
+#Navigation .row .col-md-4,
+#Navigation .row .col-md-7,
+#Navigation .row .col-md-5 {
+    float: right
+}
+
+#Navigation .nav-pills {
+    border: none;
+    margin-top: 20px;
+    font-size: 15px;
+    z-index: 10
+}
+
+#Navigation .nav-pills>li {
+    float: right;
+    color: #fff
+}
+
+#Navigation .nav-pills>li a {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    font-family: 'RB-Regular';
+}
+
+#Navigation .nav-pills>li>a {
+    padding: 0px 15px;
+    color: #FFF
+}
+
+#Navigation .nav-pills>li>a:hover {
+    color: #9dff00;
+    transition: all 0.5s ease-in-out;
+    background-color: transparent
+}
+
+#Navigation form  .input-group-addon{
+    padding: 2.5px 8px;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1;
+    color: #FFF;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid darkorange;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    background-color: darkorange
+}
+
+#Navigation form .input-group-addon .fa-lock {
+    padding: 0 4px
+}
+
+#Navigation form .form-control{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    float: right
+}
+
+#Navigation form .fa{
+    font-size: 16px;
+    position: relative;
+    top: -2px
+}
+
+#Navigation .dropdown-menu {
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    float: right;
+    min-width: 160px;
+    padding: 8px 0;
+    margin: 0;
+    font-size: 15px;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, .175); */
+    color: #FFF;
+    border-radius: 5px 0 5px 5px
+}
+
+#Navigation .dropdown-menu .divider {
+    height: 1px;
+    margin: 3px 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#Navigation .dropdown-menu li a {
+    color: #FFF
+}
+
+#Navigation .dropdown-menu li a:hover {
+    color: #9dff00;
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-left: 5px;
+}
+
+#Navigation .nav .open>a,
+#Navigation .nav .open>a:hover,
+#Navigation .nav .open>a:focus {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 5px 5px 0 0
+}
+
+#Navigation .login-and-reg {
+    position: relative;
+    left: 0px;
+    top: 2px
+}
+
+#Navigation .login-and-reg i {
+    padding: 5px 6px;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    color: rgb(21, 177, 150);
+    font-size: 12px
+}
+
+#Navigation .login-and-reg a {
+    color: #FFF;
+    font-family: 'RB-Regular';
+    font-size: 12px
+}
+
+#Navigation .row .col-md-5 {
+    padding: 0;
+}
+
+#Navigation .login-and-reg a:hover {
+    text-decoration: none
+}
+
+#Navigation .nav {
+    margin-bottom: 8px
+}
+
+#Navigation .row .col-md-3{
+    padding: 0
+}
+
+
+/***************************************
+-- END CSS of Navigation bar Settings --
+****************************************/
+
+
+/***********************************
+-- Start CSS of Main Menu Section --
+************************************/
+
+#main-menu {
+    padding: 10px 0;
+    background-color: #eee;
+    font-family: 'RB-Regular';
+}
+
+#main-menu .row .col-md-6 {
+    float: right
+}
+
+#main-menu i {
+    font-weight: bold;
+    color: rgb(21, 177, 150);
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+#main-menu h5 {
+    color: #333
+}
+
+#main-menu .row .ss .row .col-md-3 {
+    padding: 0;
+    float: right;
+}
+
+#main-menu a {
+    color: rgb(21, 177, 150);
+}
+
+#main-menu a embed {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin-left: 5px
+}
+
+
+/*********************************
+-- End CSS of Main Menu Section --
+**********************************/
+
+
+/********************************
+-- Start CSS of level Section --
+*********************************/
+
+#vocab {
+    font-family: 'RB-Regular';
+    padding: 25px 0;
+}
+
+#vocab .row .col-md-3,
+#vocab .row .col-md-9 {
+    float: right;
+    padding: 0
+}
+
+#vocab .btn-primary {
+    width: 80%;
+    text-align: right;
+    border-radius: 0;
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #bbb;
+    background-color: transparent;
+    border-right: 0;
+    border-left: 0;
+    color: #333;
+    padding: 11px 5px;
+    overflow: hidden
+}
+
+#vocab .btn-primary i {
+    color: rgb(21, 177, 150);
+    float: left
+}
+
+#vocab .btn-primary:hover i {
+    transition: all 0.5s ease-in-out;
+}
+
+#vocab .dropdown-menu {
+    top: -5%;
+    left: -100px;
+    float: right;
+    text-align: right;
+    border-radius: 0;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    border-right: 0;
+    border-left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2px 0
+}
+
+#vocab .dropdown-menu>li>a {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+#vocab .dropdown-menu>li>a:hover {
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    background: -webkit-linear-gradient(0deg, rgba(255, 96, 96, 1) 0%, rgba(255, 96, 96, 1) 0%, rgba(245, 170, 59, 1) 100%, rgba(245, 170, 59, 1) 100%);
+    background: -moz-linear-gradient(90deg, rgba(255, 96, 96, 1) 0%, rgba(255, 96, 96, 1) 0%, rgba(245, 170, 59, 1) 100%, rgba(245, 170, 59, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 96, 96, 1) 0%, rgba(255, 96, 96, 1) 0%, rgba(245, 170, 59, 1) 100%, rgba(245, 170, 59, 1) 100%);
+    color: #FFF
+}
+
+#vocab .Flexible-container {
+    position: static;
+    padding-bottom: 75%;
+    padding-top: 5px;
+    overflow: hidden;
+}
+
+#vocab .Flexible-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#vocab .row .col-md-9 .row .col-md-3 {
+    float: right;
+    background-color: #eee;
+    border: 0.1px solid #ddd;
+      
+}
+
+
+/*********************************
+-- End CSS of Main Menu Section --
+**********************************/
+
+
+/*********************************
+-- Start CSS of words Section --
+**********************************/
+
+#vocab .container-fluid .row  .container .row .col-md-2  {
+    float: right;
+}
+
+#vocab .container-fluid .row .col-md-9 .container-fluid .row  {
+    float: right;
+}
+
+
+#vocab .container .col-md-9 .row .frist_colm {
+    float: right;
+}
+
+#vocab .container .col-md-9 .row .second_colm {
+    float: right;
+}
+
+#vocab .container .col-md-9 .row .third_colm {
+    float: right;
+}
+
+#vocab .container .col-md-9 .row .forth_colm {
+    float: right;
+}
+
+#vocab .container .col-md-9 .row .fivth_colm {
+    float: right;
+}
+
+.words {
+
+    margin-top: 5px;
+}
+
+
+
+.houv {
+    margin: 5px auto;
+        font-family: 'AdobeNaskh-Medium';
+    font-size: 20px;
+     
+}
+
+.houv:hover {
+    color: #F98D4A;
+}
+
+
+.fastyle {
+   /* transform: rotateY(180deg);
+    display: none;*/
+}
+
+.fastyle2 {
+    transform: rotateY(180deg);
+   
+}
+
+.word_stting {
+    color: red;
+}
+
+#overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  
+    display: block;
+}
+
+.lesson_title {
+    text-align: center;
+    color: aliceblue;
+}
+
+.lesson_img {
+    margin-top: 100px;
+}
+
+.space {
+    width: 2%;
+    background-color: aliceblue;
+}
+
+.words2 {
+    margin-top: 10px;
+    background-color: #F7F7F7;
+}
+
+.lesson_img3 {
+    margin-top: 20px;
+}
+.hid{
+    visibility: hidden;
+}
+
+.gray{
+    /*background-color: rgb(247, 247, 247);*/
+    border: solid rgb(247, 247, 247);
+     box-shadow: 5px 5px 5px #888888;
+    margin-bottom: 10%;
+    
+}
+/*********************************
+-- end CSS of words Section --
+**********************************/
+
+
+/********************************
+-- Start CSS of Footer Section --
+*********************************/
+
+/********************************
+-- Start CSS of Footer Section --
+*********************************/
+
+footer {
+    background-image: url('../images/Kalemon-ASL.png');
+    padding: 25px;
+    min-height: 250px;
+    font-family: 'RB-Regular';
+    border-top: 5px solid darkorange;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-position: center
+}
+
+footer .row .col-md-3 {
+    float: right
+}
+
+footer h3 {
+    color: #fff;
+    font-size: 16px
+}
+
+footer a h3:hover {
+    color: lawngreen;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+}
+
+footer ul a li {
+    padding: 5px 0;
+    font-size: 16px
+}
+
+footer ul a li:hover {
+    color: yellowgreen;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    padding-right: 5px
+}
+
+footer .kal {
+    margin-top: 25px;
+}
+
+footer .copy {
+    color: #FFF;
+    margin-top: 35px
+}
+
+
+/******************************
+-- End CSS of Footer Section --
+*******************************/
+
+/******************************
+-- End CSS of Footer Section --
+*******************************/
+
+
+/*****************
+start accordion
+*****************/
+
+p.accordion {
+    color: #444;
+    cursor: pointer;
+    padding: opx;
+    width: 100%;
+    border: none;
+    text-align: right;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+ 
+p.accordion:before {
+    font-family: FontAwesome;
+    content: '\f104';
+    float: left;
+    margin-left: 30%;
+    font-weight: 120px;
+}
+
+p.accordion.active:before,
+p.accordion:hover {
+    color: #F98D4A;
+    /*  font-family: FontAwesome;
+    content: "\f107";
+    font-weight: 120px;*/
+
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border: none;
+}
+
+.line {
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 20%;
+    font-weight: 300px;
+}
+
+.unit_name {
+    margin-right: 30%;
+}
+
+.p {
+    padding: 10px;
+    width: 110px;
+    height: 45px;
+    vertical-align: middle;
+    cursor: pointer;
+     
+}
+
+

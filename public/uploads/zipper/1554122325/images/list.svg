@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
+  <title>Artboard 34 copy</title>
+  <g>
+    <g>
+      <path d="M19,37.35A18.35,18.35,0,1,1,37.35,19,18.38,18.38,0,0,1,19,37.35Z" style="fill: #fff"/>
+      <path d="M19,1.29A17.71,17.71,0,1,1,1.29,19,17.73,17.73,0,0,1,19,1.29M19,0A19,19,0,1,0,38,19,19,19,0,0,0,19,0Z" style="fill: #40b3c9"/>
+    </g>
+    <g>
+      <rect x="9.62" y="8.53" width="15.01" height="18.79" style="fill: #40b3c9"/>
+      <rect x="13.38" y="12.06" width="15.01" height="18.79" style="fill: #fff;stroke: #40b3c9;stroke-miterlimit: 10;stroke-width: 0.6720198758578236px"/>
+      <line x1="16.17" y1="16.72" x2="25.59" y2="16.72" style="fill: none;stroke: #e44827;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 0.6720198758578236px"/>
+      <line x1="16.17" y1="20.03" x2="25.59" y2="20.03" style="fill: none;stroke: #e44827;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 0.6720198758578236px"/>
+      <line x1="16.17" y1="23.34" x2="25.59" y2="23.34" style="fill: none;stroke: #e44827;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 0.6720198758578236px"/>
+      <line x1="16.17" y1="26.65" x2="25.59" y2="26.65" style="fill: none;stroke: #e44827;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 0.6720198758578236px"/>
+    </g>
+  </g>
+</svg>

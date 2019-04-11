@@ -1,0 +1,23 @@
+body {
+    background: none !important;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.next-previous img {
+    cursor: pointer;
+    position: relative;
+    bottom: 70px;
+    width: 15%
+}
+
+.next-previous {
+    left: 40%
+}
+
+#scene2,
+#scene3,
+#scene4 {
+    display: none
+}

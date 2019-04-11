@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html dir="ltr">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>&nbsp;</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/activity.css" />
+    <link rel="stylesheet" href="css/activity-W.css" />
+    <script src="scale.js"></script>
+</head>
+
+<body onload="initSize();" onresize="myResize()" style="width:100%; height: 100%;">
+    <a href="javascript:void(0);" onclick="changeLang()" id="langHref">
+            <img id="langIcon" src="images/en-off.png"  />
+        </a>
+        <div>
+            <!--  MainContent Div contains Video and Buttons-->
+            <div id="print_it" onclick="printDiv('printableHTML')">
+                <img src="images/print-off.png"/>
+            </div>
+            <div id="printableArea" style="width:100%;height:100%;">
+                <img src="images/Lv1-U1-L1-Act-L_arabic.svg" style="width:100%;height:100%;background: #fff; min-height: 580px;" />
+            </div>
+            <div id="printableHTML">
+                <img class="imgPrint" src="images/image_U1_L1-01.svg"/>
+                <img class="imgPrint" src="images/image_U1_L1-02.svg"/>
+                <img class="imgPrint" src="images/image_U1_L1-03.svg"/>
+                <img class="imgPrint" src="images/image_U1_L1-04.svg"/>
+            </div>
+        </div>
+    <!--                                Scripts                          -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/activity-W.js"></script>
+    <script>
+        
+    </script>
+
+</body>
+
+</html>

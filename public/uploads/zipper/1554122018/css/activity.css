@@ -1,0 +1,80 @@
+@charset "utf-8";
+.theFrame {
+    position: relative;
+    top: 2px;
+    height: 502px;
+    width: 582px;
+}
+
+.downMenuActivity {
+    position: relative;
+    /*top: 1px;*/
+    margin-left: 1.5px;
+    /*margin-top:6px;*/
+    float: left;
+    /*bottom: 4px;*/
+    background: url('../images/Activity01/bgbtn_02.png') no-repeat;
+    background-size: cover;
+}
+
+.downMenuActivity div {
+    cursor: pointer;
+    margin: 2px 1px 0px 0px;
+    float: left;
+}
+
+.wrapper {
+    width: 584px;
+    height: 584px;
+    margin: auto;
+}
+
+.theContent {
+    position: relative;
+    width: 587px;
+    height: 674px;
+    padding: 2px;
+    float: left;
+}
+
+.upperbtns div {
+    float: left;
+    margin-left: 1.85px;
+}
+
+img {
+    width: 60%;
+}
+
+#firstlvlBtn {
+    width: 165px;
+}
+
+#helpVideoBtn,
+#letterVideoBtn {
+    z-index: 7;
+    position: absolute;
+    left: 489px;
+    height: auto;
+    cursor: pointer;
+}
+
+#helpVideoDiv,
+#letterVideoDiv {
+    z-index: 8;
+    position: absolute;
+    height: 100%;
+    margin: auto;
+    background: black;
+}
+
+#helpVideoDiv img,
+#letterVideoDiv img {
+    width: 25px;
+    height: auto;
+    top: 0;
+    position: inherit;
+    left: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}

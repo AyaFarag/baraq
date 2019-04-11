@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>استمع و تحدث</title>
+
+    <link href="css/Style.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="hide-when-start">
+
+        <div class="start">
+            <img class="langbtn hover" src="imgs/icon_en_off.png" alt="arabicbtn" />
+            <h1>اسْتَمِعْ ثُمَّ رَدِّدْ</h1>
+            <img class="startico hover" src="imgs/begin_ar_off.png" alt="arabicbtn" />
+        </div>
+        <div class="overlay"> </div>
+    </div>
+
+    <div class="act-container">
+        <div class="show" dir="rtl">
+            <div class="showtype vidimg1">
+                <img src="imgs/soundbutton.png" alt="soundbtn" />
+            </div>
+            <div class="showtype vidimg2">
+                <img src="imgs/soundbutton.png" alt="soundbtn" />
+            </div>
+            <div class="showtype vidimg3">
+                <img src="imgs/soundbutton.png" alt="soundbtn" />
+            </div>
+            <div class="showtype vidimg4">
+                <img src="imgs/soundbutton.png" alt="soundbtn" />
+            </div>
+            <div class="showtype vidimg5">
+                <img src="imgs/soundbutton.png" alt="soundbtn" />
+            </div>
+        </div>
+        <br />
+        <div class="show-video">
+        	<video src="" class="show-video"></video>
+        </div>
+        <div class="buttons">
+            <div class="container-inner">
+                <div class="image">
+                    <img class="hover RepeatBtn" alt="Play" src="imgs/yesDivPlay_off.png">
+                </div>
+                <div class="image">
+                    <img class="hover RecordBtn" alt="Record" src="imgs/icon_reco_off.png" >
+                </div>
+                <div>
+                    <audio id="audioPar" src="">
+                      Your browser does not support the audio tag1.
+                    </audio>
+                </div>
+            </div>
+        </div>
+        <audio id="audioTitle" src="sounds/U1_L1_Hs.mp3">
+          Your browser does not support the audio tag2.
+        </audio>
+    </div>
+    
+    <script type="application/javascript" src="scripts/jquery.min.js"></script>
+    <script type="application/javascript" src="scripts/custom.js"></script>
+    <script type="application/javascript" src="scripts/recorder.js"></script>
+</body>
+
+</html>

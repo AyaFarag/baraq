@@ -1,0 +1,427 @@
+/* Smart Phones and Tablets*/
+
+@media (max-width: 767px) {
+    #Navigation form {
+        width: 80%;
+        margin: 15px auto
+    }
+    #Navigation .nav-pills>li {
+        float: right;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        margin: 5px auto;
+        position: relative;
+        left: 20px
+    }
+    #Navigation .logo {
+        margin: 5px auto;
+        width: 40%
+    }
+    #Navigation .login-and-reg {
+        position: static;
+        margin: 5px auto;
+        text-align: center
+    }
+    #Navigation .login-and-reg i {
+        padding: 5px 7px;
+        font-size: 16px
+    }
+    #Navigation .login-and-reg a {
+        color: #FFF;
+    }
+    #Navigation .login-and-reg span {
+        font-size: 14px;
+        font-weight: bold
+    }
+    #Navigation .kal-logo {
+        width: 35%;
+        margin: 25px auto
+    }
+    
+    /*************
+    Css of Levels
+    **************/
+    #Levels a .level-data {
+        padding: 8px 15px;
+        overflow: hidden;
+    }
+    #Levels a .level-data h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+    #Levels a .level-data svg {
+        width: 20px;
+    }
+    #Lessons .lesson h4 {
+        text-align: center;
+    }
+    #Lessons .lesson p {
+        text-align: center;
+    }
+    #semiFooter a .FreeForYou {
+        padding: 10px 0
+    }
+    #semiFooter a .FreeForYou svg {
+        width: 35px
+    }
+    #semiFooter a .FreeForYou h3 {
+        font-size: 18px
+    }
+    footer {
+        text-align: center
+    }
+    footer ul a li {
+        position: relative;
+        left: 20px
+    }
+    #main-menu h5 {
+        line-height: 1.8
+    }
+    #Units .btn-primary {
+        width: 100%;
+        text-align: right;
+        border-radius: 0;
+        border-bottom: 1px solid #bbb;
+        border-top: 1px solid #bbb;
+        background-color: transparent;
+        border-right: 0;
+        border-left: 0;
+        color: #333;
+        padding: 11px 5px;
+        display: block;
+        margin: 0 10px;
+        overflow: hidden
+    }
+    #Units .btn-primary i {
+        color: rgb(21, 177, 150);
+        float: left;
+        position: relative;
+        left: 180px
+    }
+    #Units .dropdown-menu {
+        top: -5%;
+        left: 0px;
+        float: right;
+        text-align: center;
+        padding: 2px 0;
+    }
+    #Units .dropdown-menu>li>a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #ccc;
+        font-size: 14px;
+    }
+    #Units .Flexible-container {
+        position: static;
+        padding-bottom: 75%;
+        padding-top: 0px;
+        overflow: hidden;
+    }
+    #Units .row .col-md-9 .row .col-md-3 svg {
+        width: 120px;
+        display: block;
+        margin: auto
+    }
+    #Jawla {
+        overflow: hidden
+    }
+    #Jawla .Flexible-container {
+        position: static;
+        padding-bottom: 300%;
+        padding-top: 0;
+        overflow: hidden;
+    }
+    #Jawla .Flexible-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden
+    }
+    .view {
+        height: 710px
+    }
+    /**********************
+Start CSS of Login Page
+***********************/
+    #Register,
+    #Login {
+        padding: 20px 0;
+    }
+    #Register form,
+    #Login form {
+        width: 100%;
+        padding: 10px;
+    }
+    #Register form h3,
+    #Login form h3 {
+        color: darkorange;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        font-size: 20px
+    }
+    #Register form h5,
+    #Login form h5 {
+        font-size: 13px;
+        margin-bottom: 16px
+    }
+    #Register form .input-group-addon,
+    #Login form .input-group-addon {
+        font-size: 16px;
+    }
+    #Login form .remDiv .remember .form-control {
+        height: 15px;
+    }
+    #Login form .remDiv .remember span {
+        font-size: 12px
+    }
+    #Login form .remDiv .forget {
+        float: left;
+        width: 50%;
+        font-size: 10px;
+        color: black;
+        font-weight: 600
+    }
+    #Register form .input-group,
+    #Login form .input-group {
+        margin-bottom: 15px
+    }
+    #Register form .btn,
+    #Login form .btn {
+        padding: 5px 0;
+        font-size: 14px
+    }
+    #Register form .btn-info,
+    #Login form .btn-info {
+        margin-bottom: 15px
+    }
+    #Register form .reg,
+    #Login form .reg {
+        padding: 20px 0 0 0;
+    }
+    #Register .parent .child1 {
+        width: 100%;
+        float: none;
+    }
+    #Register .parent .child2 {
+        width: 100%;
+        float: none;
+    }
+    a.btn {
+        margin: 15px auto;
+    }
+    /*.lesson_img3{
+        
+        width: 200px;
+    margin-right: 30%;
+    }
+    */
+}
+
+
+/* Small Screens*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #Navigation .input-group {
+        margin: 20px 0;
+    }
+    #Navigation .login-and-reg {
+        position: static;
+        margin: 5px auto;
+        text-align: center
+    }
+    #Navigation .login-and-reg i {
+        padding: 8px 11px;
+        font-size: 18px
+    }
+    #Navigation .logo {
+        width: 40%;
+        margin: 15px auto
+    }
+    #Navigation .login-and-reg a {
+        color: #FFF;
+    }
+    #Navigation .login-and-reg span {
+        font-size: 17px;
+        font-weight: bold
+    }
+    #Navigation .nav-pills>li>a {
+        padding: 0 30px
+    }
+    #Navigation .kal-logo {
+        width: 25%;
+        margin: 15px auto
+    }
+    #Levels a .level-data {
+        padding: 10px 0px;
+    }
+    #Levels .level-data .img-type {}
+    footer {
+        text-align: center
+    }
+    footer ul a li {
+        position: relative;
+        left: 20px
+    }
+    #Units .btn-primary {
+        width: 60%;
+        text-align: right;
+        border-radius: 0;
+        border-bottom: 1px solid #bbb;
+        border-top: 1px solid #bbb;
+        background-color: transparent;
+        border-right: 0;
+        border-left: 0;
+        color: #333;
+        padding: 11px 5px;
+        display: block;
+        margin: auto;
+    }
+    #Units .dropdown-menu {
+        top: -5%;
+        left: -10px;
+        float: right;
+        text-align: right;
+        padding: 0px
+    }
+    #Units .dropdown-menu>li>a {
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    #Units .Flexible-container {
+        position: static;
+        padding-bottom: 75%;
+        padding-top: 5px;
+        overflow: hidden;
+    }
+    #Jawla .Flexible-container {
+        position: static;
+        padding-bottom: 100%;
+        padding-top: 0;
+        overflow: hidden;
+    }
+    #Jawla .Flexible-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #Register form,
+    #Login form {
+        width: 70%;
+        padding: 10px;
+    }
+    a.btn {
+        margin: 15px auto;
+    }
+    #Units .btn-primary i {
+        left: 15px;
+    }
+}
+
+
+/* Medium Screens */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #Navigation .nav-pills {
+        margin: 15px auto;
+        font-size: 13px
+    }
+    #Navigation form .form-control {
+        width: 100%;
+    }
+    #Navigation .login-and-reg i {
+        padding: 5px 6px;
+        font-size: 9px
+    }
+    #Navigation .login-and-reg a {
+        color: #FFF;
+        font-family: 'RB-Regular';
+    }
+    #Navigation .login-and-reg span {
+        font-size: 10.4px;
+        font-weight: bold
+    }
+    #Navigation .row .col-md-4 {
+        padding-left: 2px
+    }
+    #Navigation .login-and-reg {
+        left: 5px;
+    }
+    #Levels a .level-data h3 {
+        font-size: 17px
+    }
+    #Units .Flexible-container {
+        position: static;
+        padding-bottom: 75%;
+        padding-top: 5px;
+        overflow: hidden;
+    }
+    .view {
+        height: 550px
+    }
+    #Register form,
+    #Login form {
+        width: 60%;
+        padding: 10px;
+    }
+    #main-menu a {
+        color: rgb(21, 177, 150);
+        font-size: 12px;
+    }
+    #Units .btn-primary i {
+        color: rgb(21, 177, 150);
+        float: left;
+        position: relative;
+        left: 15px
+    }
+}
+
+
+/* Large Screens */
+
+@media (min-width: 1200px) {
+    .view {
+        min-height: 650px
+    }
+    #Units .col-lg-12 {
+        width: 95%;
+        margin: auto;
+    }
+    #Units .btn-primary i {
+        color: rgb(21, 177, 150);
+        float: left;
+        position: relative;
+        left: 20px
+    }
+}
+
+
+
+@media (min-width: 500px) and (max-width: 767px) {
+  
+    
+    .lesson_img3{
+        margin-right:11%;
+    max-width:72%;
+    
+        
+    }
+     .img_9
+    {
+        margin-right:11%;
+        width: 70%;
+    }
+    #overlay{
+         margin-right:11%;
+        width: 72%;
+        
+    }
+    
+    
+    
+}

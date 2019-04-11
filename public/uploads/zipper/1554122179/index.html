@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>&nbsp;</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="scale.js"></script>
+</head>
+
+<body onload="initSize();" onresize="myResize()" style="width:100%; height: 100%;">
+
+    <!-- Scene 1 -->
+    <div style="position: relative" id="scene1">
+        <div style="width:100%;height:100%;">
+            <img src="images/1.svg" style="width:100%;height:100%;background: #fff; min-height: 580px;" />
+        </div>
+        <div class="next-previous" style="position: absolute">
+            <img src="images/next.png" style="width: 40%" id="firstSceneNextBtn" />
+        </div>
+    </div>
+    
+    
+    <!-- Scene 2 -->
+    <div style="position: relative" id="scene2">
+        <div style="width:100%;height:100%;">
+            <img src="images/2.svg" style="width:100%;height:100%;background: #fff; min-height: 580px;" />
+        </div>
+        <div class="next-previous" style="position: absolute; left: 30%">
+            <img src="images/next.png" style="margin-right: 30px" id="secondSceneNextBtn" />
+            <img src="images/prev.png" style="margin-left: 30px" id="secondScenePreviousBtn" />
+        </div>
+    </div>
+
+
+    <!-- Scene 3 -->
+    <div style="position: relative" id="scene3">
+        <div style="width:100%;height:100%;">
+            <img src="images/3.svg" style="width:100%;height:100%;background: #fff; min-height: 580px;" />
+        </div>
+        <div class="next-previous" style="position: absolute; left: 30%">
+            <img src="images/next.png" style="margin-right: 30px" id="thirdSceneNextBtn" />
+            <img src="images/prev.png" style="margin-left: 30px" id="thirdScenePreviousBtn" />
+        </div>
+    </div>
+
+    <!-- Scene 4 -->
+    <div style="position: relative" id="scene4">
+        <div style="width:100%;height:100%;">
+            <img src="images/4.svg" style="width:100%;height:100%;background: #fff; min-height: 580px;" />
+        </div>
+        <div class="next-previous" style="position: absolute">
+            <img src="images/prev.png" style="width: 40%" id="fourthScenePreviousBtn" />
+        </div>
+    </div>
+
+    <script src="scripts/jquery.min.js"></script>
+</body>
+</html>

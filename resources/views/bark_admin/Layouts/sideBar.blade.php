@@ -45,15 +45,10 @@
                             </li>
                             
                             <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
-                                <a href="{{ route('structure.index')}}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext"> المدارس </span></a>
+                                <a href="{{ url('schools')}}" class="nav-link"><span class="pcoded-micon"><i class="feather fa-school"></i></span><span class="pcoded-mtext"> المدارس </span></a>
 
                             </li>
-                         
-                           
 
-
-
-                            
                             <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
                                     <a     href="{{ route('logout') }}"     class="nav-link"  onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">

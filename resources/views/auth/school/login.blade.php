@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">دخول</div>
+                <div class="card-header">دخول مدرسة</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login.users') }}">
+                    <form method="POST" action="{{ url('school/login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -62,9 +62,6 @@
                                         نسيت كلمه المرور
                                     </a>
                                 @endif
-                                <a class="btn btn-link" href="{{url('school/login') }}">
-                                   تسجيل الدخول كمدرسة
-                                </a>
                             </div>
                         </div>
                     </form>

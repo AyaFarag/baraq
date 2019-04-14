@@ -3,17 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class School extends Model
+class School extends Authenticatable
 {
-    protected $fillable = [
-        'name',
-        'student_number',
-        'location',
-        'email',
-        'score',
-        'parent_id',
-        'last_login',
-        'creator',
-    ];
+    protected $table='schools';
+    protected $guard ='school';
+ protected $fillable=[
+     'name',
+     'student_number',
+     'email',
+     'password',
+     'mobile',
+     'address',
+     'start_date',
+     'end_date',
+     'logo',
+     'website',
+     'lat',
+     'lng',
+     'social',
+ ];
+    protected $hidden = ['password', 'remember_token'];
 }

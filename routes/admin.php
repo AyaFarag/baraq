@@ -93,17 +93,13 @@ Route::group(['middleware' => ['auth', 'role:' . $UserObject->getAdminValue()]],
     
     // school
     Route::get('schools', 'Admin\SchoolController@index')->name('schools');
-    
-    Route::get('create/school', 'Admin\SchoolController@create_school')->name('school');
-    Route::post('add/school', 'Admin\SchoolController@add_school')->name('add.school');
-    
-    Route::get('schools', 'Admin\SchoolController@index')->name('schools');
-    
+    Route::get('create/school', 'Admin\SchoolController@create')->name('school');
+    Route::post('add/school', 'Admin\SchoolController@store')->name('add.school');
     Route::get('edit/school/{school}', 'Admin\SchoolController@edit')->name('edit.school');
-    Route::put('update/school/{school}', 'Admin\SchoolController@update')->name('update.school');
-    
+    Route::post('update/school/{school}', 'Admin\SchoolController@update')->name('update.school');
     Route::get('school/{school}/delete',  'Admin\SchoolController@destroy') ->name('school.delete');
-    
+
+
 });
 
     //==========================================================================================================================

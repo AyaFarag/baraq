@@ -17,15 +17,18 @@ class CreateSchoolsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('student_number');
-            $table->string('location') ->nullable();
-            $table->string('email') -> unique() ;
+            $table->string('email')->unique() ;
+            $table->string('password');
             $table->string('mobile');
-            $table->string('start_date');
-            $table->string('end_date');
+            $table->string('address')->nullable();
+            $table->date('start_date');
+            $table->date('end_date');
             $table->string('logo')-> nullable();
-            $table->string('website')-> nullable();
+            $table->string('website')->nullable();
+            $table->string('lat')->nullable();
+            $table->string('lng')->nullable();
             $table->text('social')-> nullable(); // cast to array in model
-            $table->text('password')-> nullable(); 
+            $table->rememberToken();
             $table->timestamps();
         });
     }

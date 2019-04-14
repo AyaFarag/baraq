@@ -41,8 +41,18 @@ Route::group(['middleware' => ['free']], function () {
 
     Route::get('/content/{lesson}', 'LessonController@show')->name('lesson.content');
 });
-
-
+Route::get('school/login','SchoolController@schoolLogin');
+Route::post('school/login','SchoolController@login');
+Route::get('school/logout','SchoolController@logout');
+Route::group(['middleware' => 'school'], function () {
+    Route::get('school/dashboard', 'SchoolController@index');
+    Route::get('school/student', 'SchoolController@studentIndex');
+    Route::get('add/student', 'SchoolController@addStudent');
+    Route::post('add/student', 'SchoolController@storeStudent');
+    Route::get('edit/student/{id}', 'SchoolController@editStudent');
+    Route::post('update/student/{id}', 'SchoolController@updateStudent');
+    Route::get('delete/student/{id}', 'SchoolController@deleteStudent');
+});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 

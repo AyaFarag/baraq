@@ -15,10 +15,7 @@
 $UserObject = resolve('User');
 $structure = resolve('Structure');
 
-Route::get('/', function () {
-
-    return redirect()->route('level');
-});
+Route::get('/', 'Web\HomeController@index') -> name('Web.home');
 
 // student
 
@@ -35,11 +32,14 @@ Route::group(['middleware' => ['free']], function () {
     Route::pattern('unit', '[0-9]+');
     Route::pattern('lesson', '[0-9]+');
 
-    Route::get('/unit/{level}', 'UnitController@create')->name('unit');
+    // Route::get('/unit/{level}', 'UnitController@create')->name('unit');
+    Route::get('/unit/{level}', 'Web\UnitController@index')->name('web.unit');
+    Route::get('/lesson/{unit}', 'Web\LessonController@index')->name('web.lesson');
+    Route::get('/content/{lesson}', 'Web\LessonController@lesson_content')->name('content');
 
-    Route::get('/lesson/{unit}', 'LessonController@create')->name('lesson');
+    // Route::get('/lesson/{unit}', 'LessonController@create')->name('lesson');
 
-    Route::get('/content/{lesson}', 'LessonController@show')->name('lesson.content');
+    // Route::get('/content/{lesson}', 'LessonController@show')->name('lesson.content');
 });
 
 

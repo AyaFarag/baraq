@@ -1,4 +1,5 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app') 
+@section('content')
 
     <div class="container">
         <div class="row">
@@ -9,7 +10,7 @@
 
 
                 </div>
-<button id="fullScreen" onclick="fullScreen()">fullScreen</button>
+                <button id="fullScreen" onclick="fullScreen()">fullScreen</button>
             </div>
 
             <div class="col col-md-4 mt-3">
@@ -21,6 +22,7 @@
 
                         <div class="col col-md-4 ">
                         @if($content->file->fileType!=2)
+                        
                         <button onclick='appendFileContentToDiv({{$content->file->fileType}},"{{$content->file->path}}")'>
                             <a>
                                 <div class="card">

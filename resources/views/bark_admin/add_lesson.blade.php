@@ -37,6 +37,18 @@
                 <div class="col-md-10" style="display: inline-block;">
                     <div class="row">
 
+                            <div class="col-md-8" style="" >
+                                    <div class="input-group cust-file-button">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile04" name="logo">
+                                            <label class="custom-file-label" for="inputGroupFile04">upload logo</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">uplaod</button>
+                                        </div>
+                                    </div>
+                                </div>  
+
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="form-label">الاسم بالغه العربيه </label>

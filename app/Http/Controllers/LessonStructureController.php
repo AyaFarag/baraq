@@ -141,6 +141,7 @@ class LessonStructureController extends Controller
                 $LessonStructure->show      = $request->show;
             }
                 $LessonStructure->code      = $request->code;
+                $LessonStructure->logo      = $request->logo;
                 $LessonStructure->file_id   = $file->id;
                 $LessonStructure->lesson_id = $lesson_id;
                 $LessonStructure->creator = Auth::user()->name;

@@ -58,6 +58,7 @@ class LessonController extends Controller
      */
     public function show(Lesson $Lesson)
     {
+        
         session()->put('currentAccessLessonIdByStudent', $Lesson->id);
 
         $content = Content::with('file')->get();

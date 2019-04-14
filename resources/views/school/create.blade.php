@@ -8,27 +8,6 @@
     $lat = !empty(old('lat')) ? old('lat') : 30.04546710125749;
     $lng = !empty(old('lng')) ? old('lng') : 31.23487663269043;
     ?>
-    <script>
-        $('#us1').locationpicker({
-            location: {
-                latitude: '{{ $lat }}',
-                longitude: '{{ $lng }}'
-            },
-            radius: 300,
-            markerIcon: 'http://www.iconsdb.com/icons/preview/tropical-blue/map-marker-2-xl.png',
-            inputBinding: {
-                locationNameInput: $('#address'),
-                latitudeInput: $('#lat'),
-                longitudeInput: $('#lng')
-                //radiusInput: $('#us2-radius'),
-                // locationNameInput: null,
-            },
-            enableAutocomplete: true,
-            onchanged: function (currentLocation, radius, isMarkerDropped) {
-                // alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
-            }
-        });
-    </script>
     <!-- [ Form Validation ] start -->
     <div class="col-sm-12" style="width: 77%;
    margin-right: 17%;
@@ -110,6 +89,26 @@
                                      style="width: 100%; height: 400px;">
                                 </div>
                             </div>
+                            <script>
+                                $('#us1').locationpicker({
+                                    location: {
+                                        latitude: '{{ $lat }}',
+                                        longitude: '{{ $lng }}'
+                                    },
+                                    radius: 300,
+                                    inputBinding: {
+                                        locationNameInput: $('#address'),
+                                        latitudeInput: $('#lat'),
+                                        longitudeInput: $('#lng')
+                                        //radiusInput: $('#us2-radius'),
+                                        // locationNameInput: null,
+                                    },
+                                    enableAutocomplete: true,
+                                    onchanged: function (currentLocation, radius, isMarkerDropped) {
+                                        // alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
+                                    }
+                                });
+                            </script>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">

@@ -17,7 +17,7 @@ class LessonController extends Controller
 
     public function index($unit)
     {
-        $Lesson = Lesson::where('parent_id', $unit)->get();
+        $Lesson = Lesson::where('parent_id', $unit)->orderBy('sort', 'asc')->get();
 
         return view('bareq_design.lesson', compact('Lesson', 'unit'));
     }

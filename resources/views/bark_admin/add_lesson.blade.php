@@ -11,7 +11,6 @@
         <div class="card-header">
             <h5>اضافه درس</h5>
         </div>
-
         <form style="margin-right: 10%;" 
             id="validation-form123" 
             action="{{ route('lesson.store' , ['lesson'=>$Lesson->id, 'key'=>$key]) }}" 
@@ -19,20 +18,25 @@
             enctype="multipart/form-data">
 
             @csrf
-@php $allLessonFiles=App\Models\LessonStructure::where('lesson_id',$Lesson->id)->pluck('type')->toArray(); @endphp
+                @php $allLessonFiles=App\Models\LessonStructure::where('lesson_id',$Lesson->id)->pluck('type')->toArray(); @endphp
             <div class="row">
 
                 <div class="col-md-2" style="display: inline-block;">
+                    
                     <ul name="type">
-                        @foreach($data as $key => $value)
-                        <li value="{{ $key }}"> 
-                                <a class="aa btn btn-outline-secondary" style="width:100%; @if(in_array($key,$allLessonFiles)) background-color:#1de9b6; border:0; color:#ffff !important; @endif" href="{{ url('topic/type/'.$Lesson->id. '/' . $key) }}" class=""  > {{ $value }}
+                            <small class=" text-danger" > {{ $errors->first('type') }} </small>
+                        @foreach($data as $k => $value)
+                        <li value="{{ $k }}"> 
+                                <a class="aa btn btn-outline-secondary" style="width:100%; @if(in_array($k,$allLessonFiles)) background-color:#1de9b6; border:0; color:#ffff !important; @endif" href="{{ url('topic/type/'.$Lesson->id. '/' . $k) }}" class=""  > {{ $value }}
                                 </a>
                         </li>
+                        
+                            
+                        
                         @endforeach
-
                     </ul>
                 </div>
+               
 
                 <div class="col-md-10" style="display: inline-block;">
                     <div class="row">
@@ -47,13 +51,15 @@
                                             <button class="btn btn-primary" type="button">uplaod</button>
                                         </div>
                                     </div>
+                                    <small class=" text-danger" > {{ $errors->first('logo') }} </small>
                                 </div>  
 
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="form-label">الاسم بالغه العربيه </label>
                                         <input type="text" class="form-control" placeholder="الاسم بالغه العربيه" name="arName"
-                                            value="{{($LessonStructure)?$LessonStructure->arName:''}}">
+                                            value="{{($LessonStructure)?$LessonStructure->arName:old('arName')}}">
+                                            <small class=" text-danger" > {{ $errors->first('arName') }} </small>
                                     </div>
                                 </div> 
 
@@ -62,7 +68,8 @@
                                     <div class="form-group">
                                         <label class="form-label">الاسم بالغه الانجليزيه </label>
                                         <input type="text" class="form-control" placeholder="الاسم بالغه الانجليزيه "
-                                            name="enName" value="{{($LessonStructure)?$LessonStructure->enName:''}}">
+                                            name="enName" value="{{($LessonStructure)?$LessonStructure->enName:old('enName')}}">
+                                            <small class=" text-danger" > {{ $errors->first('enName') }} </small>
                                     </div>
                                 </div> 
 
@@ -70,7 +77,8 @@
                                     <div class="form-group">
                                         <label class="form-label"> code </label>
                                         <input type="text" class="form-control" placeholder="code" name="code"
-                                            value="{{($LessonStructure)?$LessonStructure->code:''}}">
+                                            value="{{($LessonStructure)?$LessonStructure->code:old('code')}}">
+                                            <small class=" text-danger" > {{ $errors->first('code') }} </small>
                                     </div>
                                 </div> 
 
@@ -78,7 +86,8 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="form-label">sort </label>
-                                        <select class="form-control" style="display:block" name='sort'>
+                                        <select class="form-control" style="display:block" name='sort' value="old('sort')">
+                                            <option ></option>
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -92,6 +101,7 @@
                                             <option value="10">10</option>
 
                                         </select>
+                                        <small class=" text-danger" > {{ $errors->first('sort') }} </small>
                                     </div>
                                 </div> 
 
@@ -104,23 +114,28 @@
                                         <option value="{{ $key }}">{{ $value }}</option>
                                         @endforeach
                                         </select>
+                                        <small class=" text-danger" > {{ $errors->first('path') }} </small>
                                     </div>
                                 </div>
 
                                 <div class="col-md-8" id="embeded" style="display:none">
                                     <div class="form-group">
                                         <label for="embadedPath" class="form-label">Embeded code or server url </label>
-                                        <input type="text" class="form-control" id="embadedPath" placeholder="Write your embeded code or server url " name="path" value="{{($LessonStructure)?$LessonStructure->path:''}}">
+                                        <input type="text" class="form-control" id="embadedPath" placeholder="Write your embeded code or server url " name="path" value="{{($LessonStructure)?$LessonStructure->path:old('path')}}">
                                     </div>
+                                    
                                 </div> 
+                               
                                 
+                                
+                               
                                 
                             <div class="col-md-8" id="upload" style="display:none">
 
                                 <div class="col-md-12" style="padding: 0;">
                                     <div class="form-group">
                                         <label class="form-label">file types</label>
-                                        <select class="form-control" name="validation-select" style="display:block" name='fileType' />
+                                        <select class="form-control" name="validation-select" style="display:block" name='fileType'/>
                                             <option value="0">video</option>
                                             <option value="1">zip file</option>
                                             <option value="2">Quiz</option>
@@ -160,10 +175,10 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <div class="switch switch-success d-inline m-r-10">
-                                        <input type="checkbox" id="switch-s-2" name="show" value="0">
+                                        <input type="checkbox" id="switch-s-2" name="show" value="1" @if(old('show')==1) checked @endif>
                                         <label for="switch-s-2" class="cr"></label>
                                     </div>
-                                    <label>مجانى</label>
+                                    <label>إظهار</label>
                                 </div>
                             </div> 
 

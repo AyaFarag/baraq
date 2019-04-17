@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     public function index(){
 
-        $level = Level::where('type', 'level')->get();
+        $level = Level::where('type', 'level')->orderBy('sort', 'asc')->get();
 
         return view('bareq_design.index', compact('level'));
     }

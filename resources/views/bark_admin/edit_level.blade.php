@@ -9,7 +9,15 @@
    margin-top: 2%;" >
         <div class="card">
             <div class="card-header">
-                <h5> تعديل المستوى</h5>
+
+                    @if($structure->type == "level")
+                    <h5> تعديل المستوي </h5>
+                    @elseif($structure->type == "unit")
+                    <h5> تعديل الوحدة </h5>
+                    @elseif($structure->type == "lesson")
+                    <h5> تعديل الدرس </h5>
+                    @endif
+                
             </div>
             <div class="card-block">
                 <form id="validation-form123" action="{{ route('update.structure', $structure->id) }}" method="POST" enctype="multipart/form-data">

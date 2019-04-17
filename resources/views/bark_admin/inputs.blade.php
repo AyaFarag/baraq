@@ -2,7 +2,8 @@
         <div class="col-md-12">
                 <div class="form-group">
                     <label class="form-label">الاسم بالغه العربيه </label>
-                    <input type="text" class="form-control" name="arname" value="{{(isset($structure))? $structure->arname:""}}" placeholder="الاسم بالغه العربيه">
+                    <input type="text" class="form-control" name="arname" value="{{(isset($structure))? $structure->arname: old('arname')}}" placeholder="الاسم بالغه العربيه">
+                    <small class=" text-danger" > {{ $errors->first('arname') }} </small>
                 </div>
             </div>
 
@@ -10,24 +11,26 @@
             <div class="col-md-12">
                     <div class="form-group">
                         <label class="form-label">الاسم بالغه الانجليزيه </label>
-                        <input type="text" class="form-control" name="enname"  value="{{(isset($structure))? $structure->enname:""}}" placeholder="الاسم بالغه الانجليزيه ">
+                        <input type="text" class="form-control" name="enname"  value="{{(isset($structure))? $structure->enname:old('enname')}}" placeholder="الاسم بالغه الانجليزيه ">
+                        <small class=" text-danger" > {{ $errors->first('enname') }} </small>
                     </div>
                 </div>
 
                 <div class="col-md-12">
                         <div class="form-group">
                             <label class="form-label"> الكود  </label>
-                            <input type="text" class="form-control"  name="code" value="{{(isset($structure))? $structure->code:""}}" placeholder="code">
+                            <input type="text" class="form-control"  name="code" value="{{(isset($structure))? $structure->code:old('code')}}" placeholder="code">
+                            <small class=" text-danger" style="width:300px;"> {{ $errors->first('code') }} </small>
                         </div>
                     </div>
 
    
     <div class="col-md-12">
-        <div class="form-group">
-            <label class="form-label" > type</label>
-            <input type="text" class="form-control" name="type" value="{{$type}}" placeholder="type" readonly>
-        </div>
+        <input type="hidden" class="form-control" name="type" value="{{$type}}" placeholder="type" readonly>
     </div>
+        
+           
+        
 
     <div class="col-md-12">
         <div class="form-group">
@@ -40,7 +43,8 @@
     <div class="col-md-12">
         <div class="form-group">
             <label class="form-label">الترتيب </label>
-            <select class="form-control" name='sort' value="{{(isset($structure))? $structure->sort:""}}" style="display:block">
+            <select class="form-control" name='sort' value="{{(isset($structure))? $structure->sort:old('sort')}}" style="display:block">
+                    <option ></option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -48,18 +52,21 @@
                     <option value="4">4</option>
                
             </select>
+            <small class=" text-danger" > {{ $errors->first('sort') }} </small>
         </div>
     </div>
 
     <div class="row">
         <div class="col-xl-6 col-md-6 mb-3">
                 <h6>اللون الاول </h6>
-                <input type="text" id="saturation-demo" class="form-control demo" data-control="saturation" name="color1" value="{{(isset($structure))? $structure->color1:"#ff6633"}}" >
+                <input type="text" id="saturation-demo" class="form-control demo" data-control="saturation" name="color1" value="{{(isset($structure))? $structure->color1:old('color1')}}{{(!isset($structure)&&!old('color1'))?'#5bc7ac':''}}" >
+                <small class=" text-danger" > {{ $errors->first('color1') }} </small>
             </div>
 
         <div class="col-xl-6 col-md-6 mb-3">
                 <h6>اللون الثانى </h6>
-                <input type="text" id="saturation-demo" class="form-control demo" data-control="saturation" name="color2" value="{{(isset($structure))? $structure->color2:"#ff6633"}}" >
+                <input type="text" id="saturation-demo" class="form-control demo" data-control="saturation" name="color2" value="{{(isset($structure))?$structure->color2:old('color2')}}{{(!isset($structure)&&!old('color2'))?'#0cc79e':''}}" >
+                <small class=" text-danger" > {{ $errors->first('color2') }} </small>
             </div>
         </div>
 
@@ -67,19 +74,22 @@
     <div class="form-group">
             <label class="form-label">File</label>
             <div>
-                <input type="file" class="validation-file" name="image">
+                <input type="file" class="validation-file" name="image" value="old('image')">
             </div>
         </div>
-        </div>
+        <small class=" text-danger" > {{ $errors->first('image') }} </small>
+    </div>
+
    <div class="col-md-12">
         <div class="form-group">
                 <div class="switch switch-success d-inline m-r-10">
-                    <input type="checkbox" id="switch-s-2" name="show" value="1">
+                    <input type="checkbox" id="switch-s-2" name="free" value="1" @if(old('free')==1) checked @endif>
                     <label for="switch-s-2" class="cr"></label>
                 </div>
-                <label>اظهار </label>
-            </div>
-            </div>
+                <label>مجاني </label>
+        </div>
+       
+    </div>
 </div>
 
 <button type="submit" class="btn btn-success">تأكيد</button>

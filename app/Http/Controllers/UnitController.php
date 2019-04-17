@@ -27,8 +27,6 @@ class UnitController extends Controller
     {
       
         $Unit = Unit::where('parent_id' ,$level )->get();
-
-        // dd($Unit);
         
         return view('units.Unit' , compact('Unit' ));
     }
@@ -40,7 +38,7 @@ class UnitController extends Controller
 
         $levelId = Unit::where('type', 'level')->first();
 
-        $unit = Unit::where(['type'=> 'unit','parent_id'=>$level_id])->get();
+        $unit = Unit::where(['type'=> 'unit','parent_id'=>$level_id])->orderBy('sort', 'asc')->get();
 
         return view('bark_admin.all_units' , compact('unit', 'level', 'levelId', 'level_id'));
     }

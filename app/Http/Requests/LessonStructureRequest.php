@@ -26,11 +26,29 @@ class LessonStructureRequest extends FormRequest
     {
         return [
             "type" => "required",
+            "logo" => "required",
             "arName" => "required",
             "enName" => "required",
-            "sort" => "required",
             "code" => "required|unique:lesson_structures,code",
+            "sort" => "required",
+            "path" => "required",
+            
            
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'type.required' => 'العنوان مطلوب',
+            'logo.required' => 'اللوجو مطلوب',
+            'arName.required'  => 'الاسم باللغه العربيه مطلوب',
+            'enName.required'  => 'الاسم باللغه الإنجليزيه مطلوب',
+            'code.required'  => 'الكود مطلوب ',
+            'sort.required'  => 'الترتيب مطلوب',
+            'path.required'  => 'برجاء رفع ملف المحتوي',
+            
+        
         ];
     }
 }

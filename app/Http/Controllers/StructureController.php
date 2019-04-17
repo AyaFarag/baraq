@@ -19,7 +19,7 @@ class StructureController extends Controller
     {
      
 
-        $structure = Structure::where('type', 'level') ->get();
+        $structure = Structure::where('type', 'level')->orderBy('sort', 'asc') ->get();
         
         return view('bark_admin.all_level' , compact('structure'));
     }

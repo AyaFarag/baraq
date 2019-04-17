@@ -35,7 +35,7 @@ class LessonController extends Controller
 
         $unit_id = $request->segment(3);
 
-        $lesson = Lesson::where(['type'=> 'lesson','parent_id'=>$unit])->get();
+        $lesson = Lesson::where(['type'=> 'lesson','parent_id'=>$unit])->orderBy('sort', 'asc')->get();
 
         return view('bark_admin.all_lessons' , compact('lesson','unit_id','unit'));
     }

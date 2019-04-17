@@ -67,7 +67,7 @@
         </div>
       @endif
 
-      @if ($errors->any())
+      {{--  @if ($errors->any())
         <div class="alert alert-danger" style="width:300px;margin:auto;  margin-top:60px ">
             <div>
                 @foreach ($errors->all() as $error)
@@ -75,7 +75,7 @@
                 @endforeach
             </div>
         </div>
-      @endif
+      @endif  --}}
 
 
 

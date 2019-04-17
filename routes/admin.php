@@ -85,7 +85,7 @@ Route::group(['middleware' => ['auth', 'role:' . $UserObject->getAdminValue()]],
     // Route::get('create/lesson/{Lesson}/{key}', 'LessonStructureController@create')->name('lesson.create');
 
     // add 
-    Route::post('store/lesson/{lesson_id}/{key}', 'LessonStructureController@store')->name('lesson.store');
+    Route::post('store/lesson/{lesson_id}/{key?}', 'LessonStructureController@store')->name('lesson.store');
     
     Route::get('lesson/content/{lesson}', 'Admin\LessonController@lesson_content')->name('lesson.content');
     

@@ -50,8 +50,9 @@ class LessonStructureController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request ,$lesson_id ,$key)
+    public function store(LessonStructureRequest $request ,$lesson_id ,$key)
     {
+        
         DB::transaction(function() use ($lesson_id,$request,$key)
         {
 

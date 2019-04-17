@@ -33,4 +33,16 @@ class StructureRequest extends FormRequest
             "image" => "required",
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'arname.required' => 'الاسم باللغه العربيه مطلوب',
+            'enname.required'  => 'الاسم باللغه الإنجليزيه مطلوب',
+            'sort.required'  => 'الترتيب مطلوب',
+            'code.required'  => 'الكود مطلوب ',
+            'image.required'  => 'الصورة مطلوبه',
+        
+        ];
+    }
 }

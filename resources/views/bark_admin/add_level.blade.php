@@ -7,7 +7,13 @@
    <div class="col-sm-12" style="width: 77%; margin-right: 17%; margin-top: 2%;" >
         <div class="card">
             <div class="card-header">
-                <h5>اضافه </h5>
+                @if($type == "level")
+                <h5> إضافه مستوي </h5>
+                @elseif($type == "unit")
+                <h5> إضافه وحدة </h5>
+                @elseif($type == "lesson")
+                <h5> إضافه درس </h5>
+                @endif
             </div>
 
             

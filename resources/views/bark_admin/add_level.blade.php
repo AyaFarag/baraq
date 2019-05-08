@@ -16,6 +16,8 @@
                 @elseif($type == "lesson")
                 <h5> إضافه درس </h5>
                 @endif
+
+                <input class="btn btn-primary" value="عودة" />>
             </div>
 
             

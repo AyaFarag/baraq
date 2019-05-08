@@ -54,11 +54,11 @@
 
 
 <script>
-    {{--  $( document ).ready(function() {
+    $( document ).ready(function() {
         setTimeout(function(){
-            $('small.alert').remove();
+            $('div.alert').remove();
         }, 2000);
-    });  --}}
+    });
 </script>
 
 

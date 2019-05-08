@@ -9,6 +9,8 @@
             <div class="card-header">
                 @if($type == "level")
                 <h5> إضافه مستوي </h5>
+                @elseif($type == "beginnerLevel")
+                <h5> إضافه مستوي تمهيدي  </h5>
                 @elseif($type == "unit")
                 <h5> إضافه وحدة </h5>
                 @elseif($type == "lesson")
@@ -27,6 +29,8 @@
                     @csrf
 
                     @include('bark_admin.inputs')
+
+
                 
                 </form>
             </div>

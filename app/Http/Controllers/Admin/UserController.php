@@ -49,6 +49,8 @@ class UserController extends Controller
         $role = $request->role;
         $user = User::where('role', $role)->paginate(10);
 
+        // return response()->json($user);
+
         return view('bark_admin.user.all_user', compact('user'));  
     }
 

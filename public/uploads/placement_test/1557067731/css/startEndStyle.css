@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'RB-Regular';
+    src: url(../fonts/RB-Regular.ttf) format("opentype");
+}
+/*********************
+-- General Settings --
+**********************/
+.slider-green #currentTimeBar {
+    background: #FDFC47;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #24FE41, #FDFC47);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #24FE41, #FDFC47);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    direction: rtl;
+    font-variant-ligatures: none;
+}
+
+body, .info-window {
+    background-color: #fff;
+    width: 858px;
+    height: 732px;
+    margin: 5vh auto;
+    font-family: 'RB-Regular';
+}
+
+.btn{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:visited{
+    color: inherit;
+}
+a:hover{
+    color: #fff;
+}
+
+/*====================================================*/
+
+/* START PAGE STYLE */
+
+.info-btn{
+    position: relative;
+    top: -98%;
+    right: 83%;    
+}
+
+.name-div{
+    position: relative;
+    top: -47%;
+    right: 25%;
+    //font-size: ;
+}
+
+.name-div input{
+    font-family: 'RB-Regular';
+    font-size: 42px;
+    background: transparent;
+    text-align: center;
+    color: #FFF;
+    border: none;
+    outline: none;
+}
+.name-div input:focus{
+    border: none;
+    outline:none;
+    text-align: center;
+    padding: 0;
+}
+
+/* change placeholder style */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #89c5c5;
+    text-align: center;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #89c5c5;
+    text-align: center;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #89c5c5;
+    text-align: center;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #89c5c5;
+    text-align: center;
+}
+.plzName{
+    position: relative;
+    top: -45%;
+    right: 37.5%;
+    opacity: 0;
+}
+
+.bottom-btns{
+    position: relative;
+    top: -45%;
+    right: 5%;
+}
+
+.bottom-btns div{
+    display: inline-block;
+    position: absolute;
+}
+
+.lang-btn{
+    left: 7%;
+    top: 25px;
+}
+
+/* INFO WINDOW STYLE */
+
+.info-window, .windowFB{
+    position: relative;
+    top: -139.5%;
+    background-color: rgba(0,0,0,.8);
+    padding: 82px 90px;
+    opacity: 0;
+    display: none;
+}
+
+.close-i{
+    position: relative;
+    top: -102.3%;;
+}
+
+.lang-i{
+    position: relative;
+    top: -635px;
+    right: 91%;
+}
+
+/* ================================================================== */
+
+/* END PAGE STYLE */
+
+.stars{
+    position: relative;
+    top: -61%;
+    left: -16%; 
+}
+
+.student-name{
+    position: relative;
+    top: -60%;
+    left: -4%;
+    font-size: 32px;
+    text-align: center;
+    color: #FFF;
+    width: 400px;
+}
+
+.levels-div{
+    position: relative;
+    top: -698px;
+    right: 57%;
+    width: 40%;
+}
+
+.levels-div > div{
+   /* margin: 17% 0;*/
+    opacity: .5;
+    
+}
+
+.levels-div p{
+    color: #FED350;
+    margin: -26px 0;  
+}
+.levels-div a{
+    opacity: 0;
+}
+
+.score-div{
+    font-size: 35px;
+    color: #0CA6A8;
+    position: relative;
+    top: -41px;
+    right: 202px;
+    text-align: center;
+    width: 115px;
+}
+
+.windowFB{
+    display: block;
+    padding-top: 21%;
+    top: -1263px;
+    height: 100%;
+    opacity: 1;
+}
+
+.windowFB img{
+    position: absolute;
+    right: 31%;
+    top: 26%;
+    opacity: 0;
+    /* from >> top: -44%;*/
+    /* to >> top: 26%;*/
+}
+
+.loadingTxt{
+    position: relative;
+    color: #fff;
+    font-size: 40px;
+    top: 48%;
+    right: 40.5%;
+    width: 117px;
+    text-align: center;
+}
+
+.loadingTxt span{
+    opacity: 0;
+}

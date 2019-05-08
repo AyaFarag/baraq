@@ -52,7 +52,7 @@ class LessonStructureController extends Controller
      */
     public function store(LessonStructureRequest $request ,$lesson_id ,$key)
     {
-        
+       
         DB::transaction(function() use ($lesson_id,$request,$key)
         {
 
@@ -66,7 +66,7 @@ class LessonStructureController extends Controller
             $LessonStructure=LessonStructure::where(['lesson_id'=>$lesson_id,'type'=>$key])->first();
           
         
-            if($request-> hasFile('file')){
+            if($request->hasFile('file')){
                 if($LessonStructure!=null){
                 
                     $file=File::find($LessonStructure->file_id);
@@ -99,15 +99,16 @@ class LessonStructureController extends Controller
                 if($file->extention == "zip"){
                         $zip = Zip::open($image);
                         $codeName=time();
-                      $namezip=  $zip->extract(public_path('uploads/zipper/'.$codeName));
+                        $namezip=  $zip->extract(public_path('uploads/zipper/'.$codeName));
                         $zip->close();
                        
                         $fileName='zipper/'.$codeName.'/index.html';
                         // dd($fileName);
                     }
 
-                $file->path      =  url('/uploads/'. $fileName); // path
+                $file->path      =   $fileName; // path
                 $location        = $image->move(public_path('uploads/'), $fileName);
+                
                 $file->fileType  =  $request->fileType; // file type
                 $file->pathType  =  $request->pathType; // path type
                 
@@ -142,7 +143,14 @@ class LessonStructureController extends Controller
                 $LessonStructure->show      = $request->show;
             }
                 $LessonStructure->code      = $request->code;
-                $LessonStructure->logo      = $request->logo;
+                if($request-> hasFile('logo')){
+
+                    $LessonStructure->logo      = $request->logo;
+                    $logo         =  $request->file('logo'); 
+                    $logoName     = time() . '.' . $logo->getClientOriginalExtension(); 
+                    $LessonStructure->logo   = $logoName;
+                    $folder      = $logo->move(public_path('/uploads/logo/'), $logoName);
+                }
                 $LessonStructure->file_id   = $file->id;
                 $LessonStructure->lesson_id = $lesson_id;
                 $LessonStructure->creator = Auth::user()->name;

@@ -30,15 +30,17 @@ class HomeController extends Controller
 
         } elseif (auth()->user()->role == $UserObject->getDataEntryValue()) {
 
-            return view('home');
+            return redirect('/');
             
         } elseif (auth()->user()->role == $UserObject->getStudentValue()) {
 
-            return view('Asign.student_account');
+            // return view('Asign.student_account');
+            return redirect('/');
 
         } elseif (auth()->user()->role == $UserObject->getParentValue()) {
 
-            return view('Asign.parent_account');
+            // return view('Asign.parent_account');
+            return redirect('/');
         } else {
 
             // return $next($request);

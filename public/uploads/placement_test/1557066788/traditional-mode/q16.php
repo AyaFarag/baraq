@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> Question 16 </title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body><audio id="myAudio">         <source src="../media/put.mp3" />     </audio>
+
+    <div id="Q12" class="area-zone bg">
+        <div>
+            <img class="img-responsive" src="../images/Plac_Test_03.png" />
+        </div>
+        <div class="pag">
+            <div class="inside_pag">
+                <div class="bullet arabicNumbers" style="opacity: 1">15</div>
+                <div class="bullet arabicNumbers">16</div>
+                <div class="bullet arabicNumbers">17</div>
+                <div class="bullet arabicNumbers">18</div>
+                <div class="bullet arabicNumbers">19</div>
+                <div class="bullet arabicNumbers">20</div>
+            </div>
+        </div>
+        <div class="navPlace">
+            <div class="rightItem">
+                <div class="l">
+                    <img id="pullAR" class="img-responsive" src="../images/Asset140.png" />
+                </div>
+                <div class="r">
+                    <h2 class="text-center arabicNumbers">16</h2>
+                </div>
+            </div>
+        </div>
+      
+
+        <div class="" style="max-width: 82%;margin-right: 10%;margin-top: 6%;">
+
+            <p id="1" data-src="c1" class="choiceDrag drag2-hover " style="margin-right: 0px;color: #03454C;font-size: 36px;display: inline-block">          أَلْعَبُ </p>
+            <p id="2" data-src="c3" class="choiceDrag drag2-hover d1 " style="margin-right: 50px;color:#03454C;font-size: 36px;display: inline-block">      تَكْتُبِينَ  </p>
+             <p id="3" data-src="c2" class="choiceDrag drag2-hover d1 " style="margin-right: 50px;color: #03454C;font-size: 36px;display: inline-block">     تَشْرَبُ     </p>
+            <p id="4" data-src="c3" class="choiceDrag drag2-hover d1 " style="margin-right: 50px;color: #03454C;font-size: 36px;display: inline-block">        تَطْبُخِينَ    </p>
+            <p id="5" data-src="c1" class="choiceDrag drag2-hover d1 " style="margin-right: 50px;color: #03454C;font-size: 36px;display: inline-block">          أَتَـحَدَّثُ </p>
+            <p id="6" data-src="c2" class="choiceDrag drag2-hover d1 " style="margin-right: 50px;color: #03454C;font-size: 36px;display: inline-block">        تَـخْرُجُ  </p>
+           
+        </div>
+        
+        
+         <div class="point q12point" style="margin-right: 8%;margin-top: 10px;">
+            <div>
+                <img class="img-responsive" style="margin-right: 2%;display: inline-block" src="../images/Asset142.png">
+                  <h1 id="dp1" data-flag="c1"  style="display: inline-block;color:#0CA6A8;margin-right: 5%;width: 22%;padding-right: 21px; " class="ansDrop boxme">..................</h1>
+                <h1 id="dp2" data-flag="c1"  style="display: inline-block;color:#0CA6A8;margin-right: 5%;width: 22%;padding-right: 21px; " class="ansDrop boxme">..................</h1>
+                
+            </div>
+            <div style="margin-top: 2%;">
+                <img class="img-responsive" style="margin-right: 2%;display: inline-block" src="../images/Asset143.png">
+                 <h1 id="dp3" data-flag="c2"  style="display: inline-block;color:#0CA6A8;margin-right: 5%;width: 22%;padding-right: 21px; " class="ansDrop boxme">..................</h1>
+                <h1 id="dp4" data-flag="c2"  style="display: inline-block;color:#0CA6A8;margin-right: 5%;width: 22%;padding-right: 21px; " class="ansDrop boxme">..................</h1>
+                
+            </div>
+            <div style="margin-top: 2%;">
+                <img class="img-responsive" style="margin-right: 2%;display: inline-block" src="../images/Asset144.png">
+                <h1 id="dp5" data-flag="c3"  style="display: inline-block;color:#0CA6A8;margin-right: 5%;width: 22%;padding-right: 21px; " class="ansDrop boxme">..................</h1>
+                <h1 id="dp6" data-flag="c3"  style="display: inline-block;color:#0CA6A8;margin-right: 5%;width: 22%;padding-right: 21px; " class="ansDrop boxme">..................</h1>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/generalPT.js"></script>
+</body>

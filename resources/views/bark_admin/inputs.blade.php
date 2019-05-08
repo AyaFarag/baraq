@@ -44,12 +44,18 @@
         <div class="form-group">
             <label class="form-label">الترتيب </label>
             <select class="form-control" name='sort' value="{{(isset($structure))? $structure->sort:old('sort')}}" style="display:block">
-                    <option ></option>
+                   
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option value="4">5</option>
+                    <option value="4">6</option>
+                    <option value="4">7</option>
+                    <option value="4">8</option>
+                    <option value="4">9</option>
+                    <option value="4">10</option>
+                    
                
             </select>
             <small class=" text-danger" > {{ $errors->first('sort') }} </small>
@@ -67,7 +73,7 @@
                 <h6>اللون الثانى </h6>
                 <input type="text" id="saturation-demo" class="form-control demo" data-control="saturation" name="color2" value="{{(isset($structure))?$structure->color2:old('color2')}}{{(!isset($structure)&&!old('color2'))?'#0cc79e':''}}" >
                 <small class=" text-danger" > {{ $errors->first('color2') }} </small>
-            </div>
+        </div>
         </div>
 
     <div class="col-md-12">
@@ -90,6 +96,55 @@
         </div>
        
     </div>
-</div>
+    @if($type == 'level')
+        @if( empty($placement_test) )
+        {{--  placement test  --}}
+        <div class="col-md-12" >
+                <div class="form-group">
+                <div class="input-group cust-file-button">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile04" name="placement_folder">
+                        <label class="custom-file-label" for="inputGroupFile04" >اختبار تحديد المستوي</label>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">uplaod</button>
+                    </div>
+                </div>
+                
+                <small class=" text-danger" > {{ $errors->first('placement_path') }} </small>
+                </div>
+            </div> 
+
+            @else
+            
+            <div class="col-md-12" >
+                    <div class="form-group">
+                
+                        
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    اختبار تحديد المستوي    
+                                </th>
+                                <th>
+                                        
+                                </th>
+                            </tr>
+                            
+                            <tr >
+                                <td class="col-md-8"><a href="{{ url('/uploads/placement_test/'.$placement_test->placement_path.'/traditional-mode/start.html') }}"> {{ url('/uploads/placement_test/'.$placement_test->placement_path.'/traditional-mode/start.html') }}</a></td>
+                                
+                                <td class="col-md-3">
+                                    
+                                    <a href="{{ url('placement/test/'. $placement_test->id .'/delete') }}" class="btn btn-danger"> حذف </a>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+            </div>
+        @endif
+    @endif
+        </div>
 
 <button type="submit" class="btn btn-success">تأكيد</button>

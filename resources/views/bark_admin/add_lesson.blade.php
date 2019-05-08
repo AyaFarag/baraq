@@ -19,21 +19,22 @@
 
             @csrf
                 @php $allLessonFiles=App\Models\LessonStructure::where('lesson_id',$Lesson->id)->pluck('type')->toArray(); @endphp
-            <div class="row">
+           
+                <div class="row">
 
                 <div class="col-md-2" style="display: inline-block;">
                     
                     <ul name="type">
-                            <small class=" text-danger" > {{ $errors->first('type') }} </small>
+                            {{--  <small class=" text-danger" > {{ $errors->first('type') }} </small>  --}}
                         @foreach($data as $k => $value)
                         <li value="{{ $k }}"> 
                                 <a class="aa btn btn-outline-secondary" style="width:100%; @if(in_array($k,$allLessonFiles)) background-color:#1de9b6; border:0; color:#ffff !important; @endif" href="{{ url('topic/type/'.$Lesson->id. '/' . $k) }}" class=""  > {{ $value }}
                                 </a>
                         </li>
+                        @endforeach
                         
                             
                         
-                        @endforeach
                     </ul>
                 </div>
                
@@ -85,29 +86,7 @@
 
                                 <div class="col-md-8">
                                     <div class="form-group">
-                                        <label class="form-label">sort </label>
-                                        <select class="form-control" style="display:block" name='sort' value="old('sort')">
-                                            <option ></option>
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-
-                                        </select>
-                                        <small class=" text-danger" > {{ $errors->first('sort') }} </small>
-                                    </div>
-                                </div> 
-
-
-                                <div class="col-md-8">
-                                    <div class="form-group">
+                                           
                                         <label class="form-label">path type</label>
                                         <select class="form-control"id="mediaType" name="pathType" onChange="select()" style="display:block" />
                                         @foreach($fileType as $key => $value)
@@ -135,7 +114,7 @@
                                 <div class="col-md-12" style="padding: 0;">
                                     <div class="form-group">
                                         <label class="form-label">file types</label>
-                                        <select class="form-control" name="validation-select" style="display:block" name='fileType'/>
+                                        <select class="form-control"  style="display:block" name='fileType'/>
                                             <option value="0">video</option>
                                             <option value="1">zip file</option>
                                             <option value="2">Quiz</option>

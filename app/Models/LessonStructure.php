@@ -40,7 +40,15 @@ class LessonStructure extends Model
         '14' => 'البلاغه',
         '15' => 'اختبر نفسك',
     ];
+    
+    const DATA_REQUIRED   =[
+        0,
+        13,
+        11,
+        3,
+        1
 
+    ];
     const MEDIA_TYPE = [
         '0' => 'Embeded',
         '1' => 'Video',
@@ -49,7 +57,7 @@ class LessonStructure extends Model
     public function lesson()
     {
         
-        return $this->belongsTo(Lesson::class , 'lesson_id');
+        return $this->belongsTo(Lesson::class );
     }
     
     public function file()

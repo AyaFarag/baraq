@@ -18,22 +18,20 @@ class Free
     public function handle($request, Closure $next)
     {
         
-        
-        if (!Auth::check()) {
+        $Structure = resolve('Structure');
             
-            $Structure = resolve('Structure');
-            
-            $Structure=Structure::find($request->segment(2));
+        $Structure=Structure::find($request->segment(2));
 
-            if( $Structure -> free == $Structure->getFreeValue()){  
-               
+
+        if($Structure->type==$Structure::LESSON_TYPE && !Auth::check()){
+            if($Structure -> free == $Structure->getFreeValue() ){  
+                       
                 return $next($request); 
             }
             elseif( $Structure -> free == $Structure->getPaidValue())
             {
                 return back();
             }
-
         }
         else
         {

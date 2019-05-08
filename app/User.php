@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 use App\Models\PlacementTest as Test;
 use App\Models\Structure as Level;
 use App\Models\StudentAnswer as Answer;

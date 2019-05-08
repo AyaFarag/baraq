@@ -25,13 +25,13 @@ class LessonStructureRequest extends FormRequest
     public function rules()
     {
         return [
-            "type" => "required",
-            "logo" => "required",
+            // "type" => "required",
+            // "logo" => "required",
             "arName" => "required",
             "enName" => "required",
             "code" => "required|unique:lesson_structures,code",
-            "sort" => "required",
-            "path" => "required",
+            // "sort" => "required",
+            //"path" => "required",
             
            
         ];
@@ -40,13 +40,13 @@ class LessonStructureRequest extends FormRequest
     public function messages()
     {
         return [
-            'type.required' => 'العنوان مطلوب',
-            'logo.required' => 'اللوجو مطلوب',
+            // 'type.required' => 'العنوان مطلوب',
+          //  'logo.required' => 'اللوجو مطلوب',
             'arName.required'  => 'الاسم باللغه العربيه مطلوب',
             'enName.required'  => 'الاسم باللغه الإنجليزيه مطلوب',
             'code.required'  => 'الكود مطلوب ',
-            'sort.required'  => 'الترتيب مطلوب',
-            'path.required'  => 'برجاء رفع ملف المحتوي',
+            // 'sort.required'  => 'الترتيب مطلوب',
+           // 'path.required'  => 'برجاء رفع ملف المحتوي',
             
         
         ];

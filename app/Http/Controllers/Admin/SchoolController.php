@@ -37,6 +37,7 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
+       
         $rules = 'greater_than_now';
         request()->validate([
             'email' => 'required|email|unique:schools',

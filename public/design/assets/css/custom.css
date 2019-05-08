@@ -58,7 +58,7 @@
 }
 
 a {
-    color: #f4ce66;
+    color: rgb(32, 178, 170);
 }
 
 a:hover {
@@ -126,7 +126,6 @@ button.navbar-toggle .ion-navicon {
 
 body {
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -169,6 +168,8 @@ li a {
 
 .main_content {
     padding: 50px 0;
+    margin: 0;
+    padding-bottom: 0;
 }
 
 iframe {
@@ -259,7 +260,6 @@ iframe {
 }
 .header div.mini_logo {
     position: absolute;
-    width: 231px;
     height: 70px;
     bottom: 0;
     right: 10rem;
@@ -274,8 +274,13 @@ iframe {
 }
 .header  div.logo img,
 .header div.mini_logo img {
-    width: 100%;
     height: 100%;
+}
+#navigation nav.header .navbar-header {
+  direction: ltr;
+}
+#navigation #header_trigger{
+  display : none;
 }
 .header .header_links {
     margin-left: 10rem;
@@ -287,8 +292,8 @@ display: inline-block;
 }
 .header .reg a {
     font-family: Arial-BoldMT, AdobeInvisFont, MyriadPro-Regular;
-    font-size: 15pt;
-    color: rgb(255, 162, 0);
+    font-size: 12pt;
+    color: rgba(255, 255, 255, 255);
 }
 .header .reg a:first-child {
     border-left: 3px solid #fff;
@@ -311,7 +316,7 @@ display: inline-block;
 }
 .header ul#Menu li {
     font-family: Arial-BoldMT, WinSoftPro-Medium, AdobeInvisFont;
-    font-size: 15pt;
+    font-size: 12pt;
     color: #fff;
     text-align: justify;
     list-style-type: none;
@@ -335,10 +340,12 @@ display: inline-block;
     position: relative;
     display: block;
     padding: 0 18px 0 12px;
-    line-height: 4em;
+    line-height: 5em;
     transition: background 0.3s;
     cursor: pointer;
     margin: 0;
+    top: 1rem;
+    color: #fff;
 }
 
 .header ul#Menu label:after {
@@ -382,7 +389,7 @@ display: inline-block;
     position: absolute;
     min-width: 100%;
     width: 179px;
-    height: auto;
+    height: 50px;
 }
 .header ul#Menu ul.submenu li {
     float: right !important;
@@ -412,9 +419,10 @@ display: inline-block;
 }
 .header .lang h5 {
     font-family: BankGothic-Regular, AdobeInvisFont, MyriadPro-Regular;
-    font-size: 15pt;
+    font-size: 12pt;
     color: rgba(255, 255, 255, 255);
     line-height: 0;
+    font-weight: normal;
 }
 #navigation .collapse  {
     
@@ -598,7 +606,7 @@ h5 {
   width:100%;
   background-color:#eee;
   position:relative;
-  min-height: 500px;
+  min-height: 430px;
   z-index:0;
   overflow:hidden;
 }
@@ -720,6 +728,9 @@ h5 {
     direction: rtl;
     float: right;
     cursor: pointer;
+}
+#about .main_content {
+  padding : 30px 0;
 }
 #about .main_content figure {
     padding: 0px;
@@ -1165,7 +1176,7 @@ hr {
     font-size: 30pt;
     color: rgba(255, 98, 0, 255);
 }
-#price_table ul figure {
+/* #price_table ul figure {
     border: 1px solid transparent;
     border-radius: 25px;
     width: 334px;
@@ -1293,19 +1304,8 @@ hr {
     background-image: url(../img/i_li1_h.png);
     background-size: contain;
     background-repeat: no-repeat;
-}
-/* #price_table ul li:nth-child(3) h5 {
-    padding-top: 1.6rem;
-    font-family: HacenAlgeriaHd, AdobeInvisFont, WinSoftPro-Medium;
-    font-size: 23pt;
-    color: rgba(255, 255, 255, 255);
-    display: block;
-    height: 68px;
-    width: 344px;
-    margin: auto;
-    margin-top: 6rem;
 } */
-#price_table .prev-next-button {
+/* #price_table .prev-next-button {
     position: absolute;
     top: 50%;
     width: 13%;
@@ -1328,7 +1328,7 @@ hr {
 }
 #price_table .next img { 
     left: 88%;
-}
+} */
 
 /*-----------------------------------------------------------------------------------------------------
                                 Blog
@@ -1889,13 +1889,12 @@ form {
     margin-bottom: 0;
 }
 #level .level_header {
-    background-image: url(../img/Layer.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     display: block;
     height: 70px;
     position: relative;
     margin: 0rem 0;
+    background-color: #fe687a;
+    width: 100%;
 }
 #level .level_header h1 {
     display: block;
@@ -1948,15 +1947,44 @@ form {
     margin: 3.5rem;
 }
 #level .level_content .col-md-4 .num {
-    background-image: url(../img/numberLevel.png);
-    background-size: contain;
-    background-repeat: no-repeat;
     display: block;
     height: 65px;
     width: 65px;
     position: absolute;
     right: 6.6rem;
     top: 1rem;
+    background-color: #fe7387;
+    border-radius: 50%;
+}
+#level .level_content .col-md-4 .paid{
+    display: block;
+    height: 60px;
+    width: 100px;
+    position: absolute;
+    left: 8%;
+    top: 5%;
+    background-color:  #DD4C39;
+    border-radius: 5%;
+    border: 0;
+}
+#level .level_content .col-md-4 .paid h4,
+#level .level_content .col-md-4 .free h4 {
+    text-align: center;
+    padding: 2rem 0;
+    margin: 0;
+    font-family: HacenAlgeriaHd, WinSoftPro-Medium, AdobeInvisFont;
+    color: #fff;
+}
+#level .level_content .col-md-4 .free{
+    display: block;
+    height: 60px;
+    width: 100px;
+    position: absolute;
+    left: 8%;
+    top: 5%;
+    background-color: rgba(127, 202, 106, 255);
+    border-radius: 5%;
+    border: 0;
 }
 #level .level_content .col-md-4 .num h4 {
     font-family: Porkys, WinSoftPro-Medium, AdobeInvisFont;
@@ -1964,22 +1992,22 @@ form {
     color: rgba(255, 255, 255, 255);
     margin: auto;
     text-align: center;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 }
 /*----------------------------------------------------------------------------------------------------
                                     Lesson Page
 -----------------------------------------------------------------------------------------------------*/
 #lessons {
-    
+    margin: 3rem 0;
+    margin-bottom: 0;
 }
+
 #lessons .lesson_header {
-    background-image: url(../img/innerbg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     display: block;
     height: 70px;
     margin: 6rem 0;
     margin-top: 0;
+    background-color: #2eb7d6;
 }
 #lessons .lesson_header h1 {
     display: block;
@@ -1990,10 +2018,11 @@ form {
     color: rgba(255, 255, 255, 255);
     direction: rtl;
     padding-top: 2rem;
-    margin-right: 20rem;
+    margin-right: 10rem;
 }
 #lessons .lesson_header h1 span {
     margin: 0 1rem;
+    color: #fff;
 }
 #lessons [class*="element-size"] {
     float: none !important;
@@ -2336,6 +2365,9 @@ form {
     font-size: 10pt;
     color: rgba(1, 173, 238, 255);
     direction: rtl;
+    position: absolute;
+    top: 3rem;
+    left: 0;
 }
 #lessons .courses a.custom-btn i{
   margin-left: 0.5rem;
@@ -2375,14 +2407,17 @@ form {
 /*----------------------------------------------------------------------------------------------------
                                     Inner Lesson Page
 -----------------------------------------------------------------------------------------------------*/
+#innerLesson {
+    margin: 0;
+    margin-bottom: 0;
+}
 #innerLesson .inner_header {
-    background-image: url(../img/innerbg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     display: block;
     height: 70px;
-    margin: 0rem 0;
+    margin: 6rem 0;
     margin-top: 0;
+    background-color: #2eb7d6;
+    margin-bottom: 0px;
 }
 #innerLesson .inner_header h1 {
     display: block;
@@ -2393,10 +2428,14 @@ form {
     color: rgba(255, 255, 255, 255);
     direction: rtl;
     padding-top: 2.2rem;
-    margin-right: 20rem;
+    margin-right: 10rem;
+}
+#innerLesson .inner_header h1 i.fa-chevron-right {
+    display: none;
 }
 #innerLesson .inner_header h1 span {
     margin: 0 1rem;
+    color: #fff;
 }
 #innerLesson .carousel {
     margin-left: 15%;
@@ -2456,6 +2495,11 @@ form {
     font-size: 100px;
     line-height: 600px;
     color: #fff;
+}
+#innerLesson .carousel-controls span.icon-angle-left,
+#innerLesson .carousel-controls span.icon-angle-right {
+    color: #fff;
+    font-size: 30px;
 }
 
 #innerLesson .carousel-controls label {
@@ -2531,50 +2575,70 @@ form {
 #innerLesson input:checked + .slide-container .nav label { 
     display: block; 
 }
-#innerLesson .subIcon div.col-md-2 {
+#innerLesson .subIcon a {
     cursor: pointer;
+    display: inline-block;
+    margin: auto;
+    padding: 0 1rem;
 }
-#innerLesson .subIcon div.col-md-2 a {
-  text-decoration: none;
+#innerLesson .subIcon.main_content {
+    padding: 20px 0;
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    display: block;
+    overflow: hidden;
 }
 #innerLesson .subIcon figure {
     background: transparent;
     border: 2px solid rgb(81, 210, 239);
-    width: 150px;
-    height: 155px;
+    width: 100px;
+    height: 105px;
     border-radius: 50%;
 }
 #innerLesson .subIcon figure img {
-    width: 70px;
-    height: 70px;
-    margin: 4rem auto;
+    width: 35px;
+    height: 35px;
+    margin: 3.5rem auto;
 }
 #innerLesson .main_content h5 {
     font-family: HacenAlgeriaHd, WinSoftPro-Medium, AdobeInvisFont;
-    font-size: 15pt;
+    font-size: 12pt;
     color: rgba(46, 183, 214, 255);
     text-align: center;
     padding-top: 1rem;
-}
-#innerLesson .col-md-2,
-#innerLesson .col-md-3 {
-    float: right;
+    position: relative;
+    right: 0rem;
 }
 #innerLesson .mainIcon h5 {
     font-family: HacenAlgeriaHd, WinSoftPro-Medium, AdobeInvisFont;
-    font-size: 15pt;
+    font-size: 12pt;
+}
+#innerLesson .mainIcon .col-md-3:last-child  img {
+  width : 200px;
+}
+#innerLesson .mainIcon a {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    padding: 0 1rem;
 }
 #innerLesson .mainIcon img {
     
-min-height: 170px;
+min-height: 120px;
     
-max-height: 170px;
+max-height: 120px;
     
-min-width: 170px;
+min-width: 120px;
 }
 #innerLesson .mainIcon {
-  padding: 30px 0;
-  margin-top: 5rem;
+  padding: 20px 0;
+  margin-top: 2rem;
+  margin: auto;
+  float: none;
+  width: 90%;
+  text-align: center;
 }
 #innerLesson .mainIcon .col-md-3:nth-child(1) h5 {
     color: rgba(95, 212, 183, 255);
@@ -2588,7 +2652,19 @@ min-width: 170px;
 #innerLesson .mainIcon .col-md-3:nth-child(4) h5 {
     color: rgba(157, 139, 228, 255);
 }
+#innerLesson .tab_container .video-container {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
 
+#innerLesson .tab_container .video-container > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
 /* ================================================================================================================
                         Media Query
 ================================================================================================================== */

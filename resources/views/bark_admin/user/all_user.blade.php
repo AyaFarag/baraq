@@ -19,7 +19,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>كل المستخدمين</h5>
-                                        
+                                        {{--  <button id="btn-add" name="btn-add" class="btn btn-primary btn-xs">Add New Link</button>  --}}
                                     </div>
 
                                     <div class="card-block">
@@ -33,10 +33,6 @@
                                             </select>
                                             <input id="id_form" type="submit" value="Search" class="btn btn-primary" />
                                         </form>
-                              
-                                        
-
-                                       
 
                                         <div class="table-responsive" style="overflow-x:initial;">
                                             <table id="zero-configuration"
@@ -110,7 +106,35 @@
 
  
 
+{{--  <script src="{{ url('/js/ajax.js') }}"></script>  --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
+<script>
+
+        $(document).ready(function () {
+
+            $('form').click(function () {
+                
+                var url = "/search/users";
+
+                $.ajax({
+
+                    type: "GET",
+                    url: url,
+                    data:{'search':$value},
+                    success: function (data) {
+                        $('tbody').html(data);   
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                    }
+                });
+
+            });
+        
+        
+        });
+</script>
 
 
 

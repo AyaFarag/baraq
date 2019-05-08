@@ -1,6 +1,9 @@
+
+
+
 $(document).ready(function() {
     console.log("ready!");
-    jQuery("html[dir=ltr]").find("head").append('<link rel="stylesheet" href="assets/css/ltr.css">');
+    jQuery("html[dir=ltr]").find("head").append('<link rel="stylesheet" href="assets/css/ltr.css">', '<link rel="stylesheet" href="assets/css/responsive-rtl.css">');
     $('.scroll_header').css('display', 'none');
     // ===== Scroll to Top ==== 
       $(window).scroll(function() {
@@ -36,116 +39,15 @@ $(document).ready(function() {
       //   }
       // });
     // ===== #header Fixed ==== 
-    // ===== slider ==== 
-      var $sb = $(".slider-box");
-
-      $sb.each(function(){
-    
-        var $this = $(this),
-            $sc = $this.find(".slider-content"),
-            $si = $sc.find(".slider-item"),
-            $sp = $this.find(".slider-pagin"),
-            $sfb = $this.find(".slider-fillbar"),
-            $sbg = $this.find(".slider-background"),
-            currentSlider = 0;
-    
-        //Check and return speed
-        function speedo(elem){
-          let s = elem.data("speed");
-            if(s < 1300){
-              s = 1300;
-              elem.data("speed", s);
-              elem.attr("data-speed", s);
-            }
-          return s;
-        }
-    
-        //Animation for fill bar
-        function animateFillBar(){
-          if($sfb != null){
-            $sfb.stop().animate({
-                width: "0%"
-            }, 0, "linear" ).animate({
-                width: "100%"
-            }, speedo($this), "linear" );
-          }
-        }
-        animateFillBar();
-    
-    
-        //Set background if exist
-        function changeBackground(){
-          if($sbg != null){
-            let url = $si.eq(currentSlider).data("background-url");
-    
-            $sbg.fadeOut(function(){
-              $sbg.css({"background-image":`url(${url})`}).fadeIn();
-            });
-          }
-        }
-        changeBackground();
-    
-    
-        //Set slider items
-        function setSlider(sid){
-          animateFillBar();
-    
-          $si.removeClass("active");
-          $sp.find("li").removeClass("active");
-    
-          if(sid==null){
-            currentSlider++; 
-          }
-          else{
-            currentSlider = sid;
-          }
-    
-          if(currentSlider > $si.length-1){
-            currentSlider = 0;
-          }
-    
-          $si.eq(currentSlider).addClass("active");
-          $sp.find("li").eq(currentSlider).addClass("active");
-    
-          changeBackground();
-        }
-    
-        //Check if auto-slide is on and set speed animation
-        var autoslide = $this.data("auto-slide"), asInterval;
-        if(autoslide){
-          let speed = speedo($this);
-          asInterval = setInterval(setSlider, speed);
-        }
-    
-        //Generate pagination
-        var sii = 0, paginHTML = "";
-        paginHTML+="<ul>";
-        $si.each(function(){
-          if($sp == null) return;
-          $(this).attr(`data-id`,sii);
-          paginHTML+=`<li><a href="#" data-target="${$this.attr("id")}" data-target-id="${sii}"><span></span></a></li>`;
-          sii++;
-        });
-    
-        paginHTML+="</ul>";
-        $sp.append(paginHTML);
-    
-        $sp.find("li").eq(0).addClass("active");
-        $sp.find("a").each(function(e){
-    
-          $(this).on("click",function(){
-            setSlider($(this).data("target-id"));
-    
-            clearInterval(asInterval);
-            let speed = speedo($this);
-            asInterval = setInterval(setSlider, speed);
-    
-            e.preventDefault;
-            return false;
-          });
-        });
+    //=====  Slider Arrows Index Page ===== 
+      $(".next").click(function() {
+        $(".slide").append($(".slide .col_full:first-of-type"));
       });
-    // ===== #slider ==== 
+
+      $(".prev").click(function() {
+          $(".slide").prepend($(".slide .col_full:last-of-type"));
+      });
+    //=====  #Slider Arrows Index Page ===== 
     // ===== Navigation Hover ====
       jQuery(".Nav li").on('mouseenter', function(event) {
           jQuery('.Nav li').removeClass("hover");
@@ -164,9 +66,9 @@ $(document).ready(function() {
     //=====  Inner Lesson Tabs ===== 
       $('.tab_content').hide();
       $('.tab_content:first').show();
-      $('.tabs div.col-md-2:first').addClass('active');
-      $('.tabs div.col-md-2').click(function(event) {
-        $('.tabs div.col-md-2').removeClass('active');
+      $('.tabs div.col-md-3:first').addClass('active');
+      $('.tabs div.col-md-3').click(function(event) {
+        $('.tabs div.col-md-3').removeClass('active');
         $(this).addClass('active');
         $('.tab_content').hide();
         var selectTab = $(this).find('a').attr("href");
@@ -189,5 +91,28 @@ $(document).ready(function() {
         $ddl.toggleClass('active');
       });
     //=====  #Mobile Epanding Menue =====  
-   
+    //=====  owl-carousel ===== 
+    $('.owl-carousel').owlCarousel({
+      // autoplay: true,
+      center: true,
+      loop: true,
+      nav: true,
+      dots: false,
+      rtl:true,
+      navText:["<div class='nav icon-angle-left'></div>","<div class='nav icon-angle-right'></div>"],
+      responsive: {
+          0: {
+              items: 1
+          },
+          991: {
+              items: 1
+          },
+          1000: {
+              items: 3
+          }
+      }
+    });
+  //=====  #owl-carousel ===== 
+  
+    
 });

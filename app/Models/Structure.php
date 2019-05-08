@@ -26,6 +26,7 @@ class Structure extends Model
         'code'
     ];
 
+    const BEGINNER_LEVEL_TYPE = 'beginnerLevel';
     const LEVEL_TYPE = 'level';
     const UNIT_TYPE = 'unit';
     const LESSON_TYPE = 'lesson';
@@ -43,9 +44,6 @@ class Structure extends Model
     {
         return $this->paidValue;
     }
-        
-    
-
     // public function parent() {
     //     return $this -> belongsTo(Structure::class);
     // }
@@ -64,7 +62,7 @@ class Structure extends Model
     public function lesson()
     {
         
-        return $this->hasMany(Lesson::class);
+        return $this->hasMany(Lesson::class,'lesson_id');
     }
     
     public function quiz()
@@ -84,5 +82,10 @@ class Structure extends Model
     {
         
         return $this->hasMany(StudentProgress::class ,'user_id');
+    }
+
+    public function placementTestLevel()
+    {
+        return $this->hasMany(LevelPlacementTest::class, 'level_id');
     }
 }

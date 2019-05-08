@@ -53,7 +53,7 @@ class ParentController extends Controller
             $user = new User();
             $user->fill($request->all());
             $user->password = bcrypt($request->password);
-//            dd($user);
+
             $user->save();
 
 
@@ -67,7 +67,25 @@ class ParentController extends Controller
     }
            
     public function parentHome(){
-        return view('Asign.parent_account');
+
+        $parent_students_id = DB::table('user_parent')
+                              ->where('parent_id', auth()->user()->id)->pluck('student_id'); 
+
+        $student_history =    DB::table('student_histories')
+                              ->join('user_parent', 'student_histories.user_id', '=', 'user_parent.student_id')
+                              ->join('structures', 'student_histories.level_id', '=', 'structures.id')
+                              ->join('users', 'student_histories.user_id', '=', 'users.id')
+                              ->get(); 
+        
+        // dd($student_history);
+     
+
+        return view('Asign.parent_account', compact('student_history'));
+    }
+
+    public function student_history(User $user){
+
+        return view('Asign.student_history', compact('id'));
     }
 
 
@@ -78,15 +96,17 @@ class ParentController extends Controller
     }
 
     public function asignChildEmail(Request $request){
-
         $child = $request->all();
         $child_object = User::where('email' , $child['email'] )->first();
-       
+        
         $data = [];
         $data['student_id'] = $child_object->id;
         $data['parent_id'] = auth()->user()->id;
+        $data['created_at'] = now();
+        $data['updated_at'] = now();
         $asign_child = DB::table('user_parent')->insert($data);
-        
+       
+        Session::flash('status', 'تمت الإضافة بنجاح');
         return view('Asign.parent_account');
 
 

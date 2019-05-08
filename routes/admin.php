@@ -41,16 +41,30 @@ Route::group(['middleware' => ['auth', 'role:' . $UserObject->getAdminValue()]],
 
     //==========================================================================================================================
     //
+    //  placement test
+    //
+    //==========================================================================================================================
+
+    Route::get('placement/test'              ,'Admin\PlacementTestController@index')->name('placement.test');
+    Route::get('placementTest'               ,'Admin\PlacementTestController@create')->name('placementtest');
+    Route::post('placement/test/add'         ,'Admin\PlacementTestController@addPlacementTest')->name('add');
+    Route::get('placement/test/{id}/edit/'   ,'Admin\PlacementTestController@editPlacementTest')->name('edit.placement.test');
+    Route::put('placement/test/{id}/update/' ,'Admin\PlacementTestController@updatePlacementTest')->name('update.placement.test');
+    Route::get('placement/test/{id}/delete'  ,'Admin\PlacementTestController@deletePlacementTest') ->name('placement.test.delete');
+
+
+    //==========================================================================================================================
+    //
     //  display levels , units and lessons
     //
     //==========================================================================================================================
     
     
     Route::get('display/levels', 'LevelController@display')->name('display.levels');
-    
     Route::get('display/units/{level}', 'UnitController@display')->name('display.units');
-
     Route::get('display/lessons/{unit}', 'LessonController@display')->name('display.lessons');
+    
+
 
     //==========================================================================================================================
     //
@@ -64,13 +78,13 @@ Route::group(['middleware' => ['auth', 'role:' . $UserObject->getAdminValue()]],
     Route::get('/structureCreate', 'StructureController@index')->name('structure.index');
 
     // create
-    Route::get('/structureCreate/{structureType?}/{parentId?}', 'StructureController@create')->where('structureType', 'level|unit|lesson');
+    Route::get('/structureCreate/{structureType?}/{parentId?}', 'StructureController@create')->where('structureType', 'beginnerLevel|level|unit|lesson');
 
     // edit
-    Route::get('/edit/{structureType}/{structure}/{parentId?}', 'StructureController@edit')->where('structureType', 'level|unit|lesson');
+    Route::get('/edit/{structureType}/{structure}/{parentId?}', 'StructureController@edit')->where('structureType', 'beginnerLevel|level|unit|lesson');
 
     // add
-    Route::post('/structureSave/{structureType}', 'StructureController@store')->where('structureType', 'level|unit|lesson');
+    Route::post('/structureSave/{structureType}', 'StructureController@store')->where('structureType', 'beginnerLevel|level|unit|lesson');
 
     // update
     Route::patch('structureCreate/{structure}/update', 'StructureController@update')->name('update.structure');
@@ -91,6 +105,14 @@ Route::group(['middleware' => ['auth', 'role:' . $UserObject->getAdminValue()]],
     
     Route::get('lesson/{content}/delete', ['as' => 'lesson.delete', 'uses' => 'Admin\LessonController@destroy']);
     
+
+    //==========================================================================================================================
+    //
+    //  add and edit levels , units and levels
+    //
+    //==========================================================================================================================
+
+
     // school
     Route::get('schools', 'Admin\SchoolController@index')->name('schools');
     Route::get('create/school', 'Admin\SchoolController@create')->name('school');

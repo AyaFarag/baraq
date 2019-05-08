@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -41,11 +42,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">دخول </a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">تسجيل</a>
                                 </li>
                             @endif
                         @else
@@ -63,7 +64,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        تسجيل خروج
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -77,9 +78,25 @@
             </div>
         </nav>
 
+        @if (session('status'))
+            <div class="alert alert-success" style="width:300px;margin:auto; margin-top:60px">
+                {{ session('status') }}
+            </div>
+        @endif
+
+
+
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+    <script>
+        $( document ).ready(function() {
+            setTimeout(function(){
+                $('div.alert').remove();
+            }, 2000);
+        });
+    </script>
 </body>
 </html>

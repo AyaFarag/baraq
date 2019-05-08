@@ -22,10 +22,35 @@
                                         <div class="card-header">
                                             <h5> {{ Breadcrumbs::render('level') }}  </h5>
                                             <a href="{{ url('structureCreate/level')}}" class="btn btn-primary" style="float:left; margin-left: 26px;"> اضافه مستوي</a>
+                                            <a href="{{ url('structureCreate/beginnerLevel')}}" class="btn btn-primary" style="float:left; margin-left: 26px;"> إضافه مستوي مبتدئ </a>
+                                            <a href="{{ route('placementtest') }}" class="btn btn-primary" style="float:left; margin-left: 26px;"> اضافه اختبار تحديد المستوي</a>
                                         </div>
                                         <div class="card-block">
                                                 
                                             <div class="table-responsive" style="overflow-x:initial;">
+                                                <table id="zero-configuration" class="display table nowrap table-striped table-hover" style="width:100%">
+                                                    <thead>
+                                                        <tr> 
+                                                            <th>اسم المستوى </th>
+                                                            <th>عدد الدروس</th>
+                                                            <th> </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+
+                                                            <tr onclick="window.location='{{ url('display/units/'.$begineer_level->id  ) }}';">
+                                                                <td> <a href="{{ url('display/lessons/'.$begineer_level->id  ) }}" class="" style="color: lightslategray"> {{ $begineer_level->arname}} </a>  </td>
+                                                                <td>  {{ \App\Models\Structure::where(['type'=> 'lessons','parent_id' => $begineer_level->id])->count() }} </td>
+                                                                <td>
+                                                                <button type="button" class="btn btn-danger" style=" float: left;" title="btn btn-danger" > <a href="{{ route('structure.delete' , $begineer_level->id)}}" class="" style="color: ivory">حذف المستوي </a> </button>
+                                                                <button type="button" class="btn btn-success" style=" float: left;" title="btn btn-success" ><a href="{{url('structureCreate/lesson'.'/'.$begineer_level->id)}}" class="" style="color: ivory">اضافه درس</a></button>
+                                                                <button type="button" class="btn btn-success" style=" float: left;" title="btn btn-success" ><a href="{{ url('edit/beginnerLevel/'.$begineer_level->id  ) }}" class="" style="color: ivory">تعديل المستوى</a></button>
+                                                                </td>
+                                                            </tr>
+                                                    </tbody>
+                                                    
+                                                </table>
                                                 <table id="zero-configuration" class="display table nowrap table-striped table-hover" style="width:100%">
                                                     <thead>
                                                         <tr> 
@@ -35,6 +60,9 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+
+
+
                                                         @foreach ($structure as $level)           
                                                            
                                                             <tr onclick="window.location='{{ url('display/units/'.$level->id  ) }}';">

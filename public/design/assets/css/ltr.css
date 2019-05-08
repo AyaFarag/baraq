@@ -5,6 +5,104 @@
                                     Index Page
 -----------------------------------------------------------------------------------------------------*/
 /* html[dir="ltr"] */
+html[dir="ltr"] #logo {
+    float: left;
+    left: 0rem;
+}
+html[dir="ltr"] #primary-menu {
+    float: right;
+}
+html[dir="ltr"] #primary-menu ul>li {
+    float: left;
+}
+html[dir="ltr"] #header #top-cart {
+    margin-right: 5rem;
+    padding-right: 5rem;
+}
+html[dir="ltr"] #header.full-header #primary-menu>ul {
+    float: left;
+    padding-left: 0;
+    margin-left: 0;
+}
+html[dir="ltr"] #header .collapse {
+    float: right;
+}
+html[dir="ltr"] #header .collapse .navbar-left {
+    float: right !important;
+}
+html[dir="ltr"] #header .collapse li {
+    float: left;
+}
+html[dir="ltr"] #header_trigger .logo {
+    float: left;
+}
+html[dir="ltr"] #header_trigger .menu-icon {
+    float: right;
+    direction: rtl;
+}
+html[dir="ltr"] #header_trigger #top-cart-trigger,
+html[dir="ltr"] #header_trigger .convertLang {
+    margin-right: 3rem;
+    margin-left: 0rem;
+}
+html[dir="ltr"] #navigation #header_trigger li {
+    text-align: center;
+    direction: ltr;
+}
+html[dir="ltr"] #navigation #header_trigger li a {
+    text-align: center;
+}
+#header_trigger li a {
+    text-align: center;
+}
+html[dir="ltr"] #header_trigger .menu a span {
+    right: 0;
+    left: 1rem;
+}
+html[dir="ltr"] .slider-caption h2 {
+    text-align: left;
+    margin-right: 0;
+    margin-left: 6rem;
+}
+html[dir="ltr"] .levels .col_one_sixth {
+    float: left;
+    margin-left: 0;
+    margin-right: 4%;
+}
+html[dir="ltr"] .levels .col_one_sixth:last-child {
+    margin-right: 0;
+}
+html[dir="ltr"] .levels .container.slider .arrows {
+    width: 100%;
+}
+html[dir="ltr"] .levels .container.slider .arrows i.next {
+    left: -34rem;
+    right: 0;
+}
+html[dir="ltr"] .what_baraq .message {
+    background-image: url(../img/messageLtr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+}
+html[dir="ltr"] .what_baraq img.rtl {
+    display: none;
+}
+html[dir="ltr"] .what_baraq img.ltr {
+    display: block;
+}
+html[dir="ltr"] .what_baraq .message h2 {
+    text-align: left;
+    margin-right: 0;
+    margin-left: 12rem;
+}
+html[dir="ltr"] .what_baraq .message p {
+    text-align: left;
+}
+html[dir="ltr"] .learning_path_img {
+    float: left;
+}
+/*  */
 html[dir="ltr"] #about .main_content div.col-md-2 {
     direction: ltr;
     float: left;
@@ -25,6 +123,9 @@ html[dir="ltr"] #blog .post-excerpt {
 }
 html[dir="ltr"] .main-footer .row div.col-md-6:first-child {
     float: left;
+}
+html[dir="ltr"] #return-to-top {
+    left: 84%;
 }
 html[dir="ltr"] .navbar-header {
     float: right;
@@ -98,18 +199,26 @@ html[dir="ltr"] #level .level_content .col-md-4 .bg {
     background-image: url('../img/levelbgLtr.png');
 }
 html[dir="ltr"] #level .level_content .col-md-4 .num {
-    left: 6.6rem;
+    left: 18%;
     right: 0;
 }
-html[dir="ltr"] #level .level_header {
+html[dir="ltr"] #level .level_header h1 img {
+    margin-right : 1rem;
 }
 html[dir="ltr"] #level .level_header h1 {
-    text-align: left;
-    padding-left: 41rem;
-    padding-right: 0;
-    right: 0;
-    direction: ltr;
-    left: -26rem;
+   
+right: auto;
+   
+left: 9rem;
+   
+direction: ltr;
+}
+html[dir="ltr"] #level .level_content .col-md-4 .free {
+    left: auto;
+    right: 8%;
+}
+html[dir="ltr"] #level .level_content .col-md-4 .free h4 {
+    font-family: BankGothic-Regular, AdobeInvisFont, MyriadPro-Regular;
 }
 /*----------------------------------------------------------------------------------------------------
                                     Lesson Page
@@ -120,6 +229,11 @@ html[dir="ltr"] #lessons [class*="element-size"] {
     display: inline-block;
     vertical-align: top;
     margin: 0 -4px 0 0;
+}
+html[dir="ltr"] #lessons .lesson_header h1 {
+    direction: ltr;
+    margin-left: 10rem;
+    text-align: left;
 }
 
 html[dir="ltr"] #lessons .element-size-75 {
@@ -472,10 +586,31 @@ html[dir="ltr"] #lessons .courses a.custom-btn i {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+html[dir="ltr"] #lessons .courses a.custom-btn {
+    left: auto;
+    right: 0;
+}
 /*----------------------------------------------------------------------------------------------------
                                     Inner Lesson Page
 -----------------------------------------------------------------------------------------------------*/
 html[dir="ltr"] #innerLesson .col-md-2, 
 html[dir="ltr"] #innerLesson .col-md-3 {
     float: left;
+}
+html[dir="ltr"] #innerLesson .inner_header h1 i.fa-chevron-left {
+    display: none;
+}
+html[dir="ltr"] #innerLesson .inner_header h1 i.fa-chevron-right {
+    display: inline-block;
+}
+html[dir="ltr"] #innerLesson .inner_header h1 {
+    direction: ltr;
+    text-align: left;
+    margin-left: 10rem;
+    margin-right: 0;
+}
+/*  */
+html[dir="ltr"] #gotoTop {
+    left: auto;
+    right: 30px;
 }

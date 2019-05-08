@@ -21,9 +21,7 @@ class CreateQuizzesTable extends Migration
             
             $table ->integer("lesson_id") -> unsigned() -> unique();
             $table-> foreign("lesson_id")-> references("id")-> on("structures")-> onDelete("cascade")->onUpdate("cascade");
-            
-            
-            
+          
             $table->string('studentResult');
             $table->string('finalResult');
             $table->timestamps();

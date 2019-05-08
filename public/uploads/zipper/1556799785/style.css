@@ -1,0 +1,81 @@
+body {
+    margin: 5px auto;
+    width: 800px;
+    height: 800px;
+}
+
+.avtivity-container {
+    width: 800px;
+    height: 800px;
+    background-color: #122B40
+}
+
+.card-style {
+    width: 200px;
+    height: 120px;
+    margin: auto;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 10px;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    position: relative;
+    top: -1000px;
+    right: -300px
+}
+
+.card-style:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+.back {
+    background: #000;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.front {
+    background: #000;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.first-row {
+    padding: 12% 8% 0;
+}
+
+.second-row {
+    padding: 2% 8% 0;
+}
+
+.third-row {
+    padding: 2% 8% 0;
+}
+
+.fourth-row {
+    padding: 2% 8% 0;
+}
+
+.fifth-row {}
+
+.flip-all {
+    position: relative;
+    top: 30px;
+    right: -70px;
+    cursor: pointer;
+}

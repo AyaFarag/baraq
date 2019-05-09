@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Start Placement Test</title>
+    <link href=" CSS/startEndStyle.css" rel="stylesheet" />
+     <script type="text/javascript">
+      
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("scoreL1", 0);
+            localStorage.setItem("name", "");
+        } else {
+            // Sorry! No Web Storage support..
+            console.log("Sorry! No Web Storage support");
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="bg hasEng">
+        <img src="imgs/start-Ar.png"/>
+    </div>
+    <div class="info-btn btn">
+        <img src="imgs/Asset 9.png" />
+    </div>
+    <div class="name-div">
+        <input type="text" placeholder="أدخل اسمك" />
+    </div>
+    <div class="plzName hasEng">
+        <img src=" imgs/Asset 13.png"/>
+    </div>
+    <div class="bottom-btns">
+        <div class="start-btn btn btn-hover hasEng">
+            <img src=" imgs/Asset 2.png" />
+        </div>
+        <div class="lang-btn lang-s btn btn-hover hasEng">
+            <img src=" imgs/Asset 8.png" />
+        </div>
+    </div>
+    
+    <div class="info-window hasEng">
+        <img src=" imgs/Ar-info.png"/>
+        <div class="close-i btn ">
+            <img src=" imgs/Asset 19.png"/>
+        </div>
+        <div class="lang-btn lang-i btn btn-hover hasEng">
+            <img src=" imgs/Asset 8.png" />
+        </div>
+    </div>
+    
+    <script src=" js/jquery-3.1.1.min.js"></script>
+    <script src=" js/start.js"></script>
+</body>
+
+</html>

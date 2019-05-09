@@ -1,9 +1,9 @@
 <?php 
 
 
-Breadcrumbs::for('level', function ($trail) {
-    $trail->push('كل المستويات', route('structure.index'));
-});
+// Breadcrumbs::for('level', function ($trail) {
+//     $trail->push('كل المستويات', route('structure.index'));
+// });
 
 // Breadcrumbs::for('level', function ($trail) {
 //     $trail->push('الوحده', route('display.units',$units));

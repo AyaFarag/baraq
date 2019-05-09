@@ -109,8 +109,8 @@ class StructureController extends Controller
         } 
 
         if($type=='beginnerLevel'){
-            $addLesson=true;
-            $lesson_parent=$row->id;
+            $addLesson=true;  
+            $parent_id=null; 
             
         }        
 
@@ -179,13 +179,12 @@ class StructureController extends Controller
             $codeName=time();
             $namezip=  $zip->extract(public_path('uploads/placement_test/'.$codeName));
             $zip->close();
-            
             $pathName = $codeName;
             $PlacementTest->placement_path      =  $pathName;
             $PlacementTest->save();
         }
-        
-        $structure->fill($request->all());
+        dd($request->all());
+        $structure->update($request->all());
             
         // dd('test');
 

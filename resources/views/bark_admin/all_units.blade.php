@@ -20,7 +20,7 @@
                                 <div class="col-sm-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h5>{{ Breadcrumbs::render('unit', $level) }} </h5>
+                                            <h5> </h5>
                                             <button type="button" class="btn btn-primary" style=" float: left;" title="btn btn-primary" ><a href="{{url('structureCreate/unit'.'/'.$level)}}" class="" style="color: ivory; float:left; " >اضافه وحده</a></button>
                                         </div>
                                         <div class="card-block">

@@ -20,7 +20,7 @@
                                 <div class="col-sm-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h5>{{ Breadcrumbs::render('lesson', $unit) }}</h5>
+                                            <h5></h5>
                                             <button type="button" class="btn btn-primary" style=" float: left;" title="btn btn-primary" ><a href="{{url('structureCreate/lesson'.'/'.$unit_id)}}" class="" style="color: ivory; float:left; " >اضافه درس</a></button>
                                         </div>
                                         <div class="card-block">

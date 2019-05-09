@@ -27,6 +27,18 @@ class StructureController extends Controller
         
         return view('bark_admin.all_level' , compact('structure','begineer_level'));
     }
+
+    public function back(){
+
+        return redirect()->route('structure.index');
+    }
+
+    public function back_units(Request $request, $id){
+
+        $id = $request->segment(3);
+        // dd($id);
+        return redirect()->route('display.units', $id);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -99,7 +111,7 @@ class StructureController extends Controller
         if($type=='beginnerLevel'){
             $addLesson=true;
             $lesson_parent=$row->id;
-            $parent_id=$row->parent_id;
+            
         }        
 
     });
@@ -127,15 +139,17 @@ class StructureController extends Controller
      * @param  \App\Structure  $structure
      * @return \Illuminate\Http\Response
      */
-    public function edit($type,  Structure $structure ,$parent_id=null)
+    public function edit($type,  Structure $structure ,$parent_id=null , Request $request)
     {
+        $id = $request->segment(5);
+
         $parent_id=$structure->id;
 
         $unitt = $structure->where('parent_id' , $structure->id )-> first();
 
         $placement_test = LevelPlacementTest::where('level_id', $structure->id )->first();
         
-        return view('bark_admin.edit_level' , compact('type' , 'structure', 'parent_id', 'unit','placement_test') );
+        return view('bark_admin.edit_level' , compact('type' , 'structure', 'parent_id', 'unit','placement_test','id') );
     }
 
     /**
@@ -147,17 +161,15 @@ class StructureController extends Controller
      */
     public function update(Request $request, Structure $structure)
     {
-        
-        $structure->update($request->all());
-
         if( $request->has('image') ){
             
             $image = $request->file('image');
+            dd($request->all());
             $imgname = time() . '.' . $image->getClientOriginalExtension();
             $location = $image->move(public_path('uploads/'), $imgname);
             $structure->image = $imgname;
             $structure->save();
-        };
+        }
         if($request->file('placement_folder')){
             $PlacementTest = new LevelPlacementTest();
             $PlacementTest->level_id = $structure->id;
@@ -167,12 +179,14 @@ class StructureController extends Controller
             $codeName=time();
             $namezip=  $zip->extract(public_path('uploads/placement_test/'.$codeName));
             $zip->close();
-            // $pathName = '/uploads/placement_test/level_1/'.$codeName.'/traditional-mode/start.html/';
+            
             $pathName = $codeName;
             $PlacementTest->placement_path      =  $pathName;
-            
             $PlacementTest->save();
         }
+        
+        $structure->fill($request->all());
+            
         // dd('test');
 
          Session::flash('status', 'تم التعديل بنجاح');

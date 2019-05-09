@@ -17,7 +17,7 @@
                     @elseif($structure->type == "lesson")
                     <h5> تعديل الدرس </h5>
                     @endif
-                
+                    <a href="{{ url('/back/units/'.$id.'/') }}" class="btn btn-danger float-right">عودة</a>
             </div>
             <div class="card-block">
                 <form id="validation-form123" action="{{ route('update.structure', $structure->id) }}" method="POST" enctype="multipart/form-data">

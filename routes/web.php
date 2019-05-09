@@ -16,9 +16,7 @@ $structure = resolve('Structure');
 
 Route::get('/', 'Web\HomeController@index') -> name('Web.home');
 
-Route::get('/back', function(){
-            return back();
-        }) -> name('back');
+
 
 
 // placement

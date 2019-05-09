@@ -7,6 +7,13 @@ $UserObject = resolve('User');
 // return view('bark_admin.index');
 // });
 
+Route::get('/back', 'StructureController@back') -> name('back');
+Route::get('/back/units/{id}', 'StructureController@back_units') -> name('back.units');
+
+
+
+
+
 Route::post('/login/users', 'Admin\UserController@loginUser')->name('login.users'); 
 
 Route::group(['middleware' => ['auth', 'role:' . $UserObject->getAdminValue()]], function () {

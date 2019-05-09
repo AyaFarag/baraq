@@ -49,12 +49,12 @@
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
-                    <option value="4">5</option>
-                    <option value="4">6</option>
-                    <option value="4">7</option>
-                    <option value="4">8</option>
-                    <option value="4">9</option>
-                    <option value="4">10</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                     
                
             </select>
@@ -80,6 +80,9 @@
     <div class="form-group">
             <label class="form-label">File</label>
             <div>
+                @if(isset($structure))
+                <span style="margin-left:10px"> <img style="width:70px; height:70px;" src="{{ url('uploads/'.$structure->image.'/') }}" />  </span>
+                @endif
                 <input type="file" class="validation-file" name="image" value="old('image')">
             </div>
         </div>

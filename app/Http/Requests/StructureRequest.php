@@ -27,7 +27,7 @@ class StructureRequest extends FormRequest
         return [
             "arname" => "required",
             "enname" => "required",
-            "sort" => "required|unique:structures",
+            "sort" => "required",
             "type" => "required",
             "code" => "required|unique:structures,code",
             "image" => "required",

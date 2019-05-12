@@ -28,6 +28,8 @@
                                                 <table id="zero-configuration" class="display table nowrap table-striped table-hover" style="width:100%">
                                                     <thead>
                                                         <tr>
+                                                            <th>الترتيب  </th>
+                                                            <th>الصورة  </th>
                                                             <th>اسم الدرس </th>
                                                             {{--  <th>عدد الانشطه </th>  --}}
                                                             <th> </th>
@@ -37,6 +39,8 @@
                                                         @foreach ($lesson as $lesson)
                                                             
                                                         <tr onclick="window.location='{{ url('lesson/content/'.$lesson->id  ) }}';">
+                                                            <td > {{ $lesson->sort }}  </td>
+                                                            <td > <img style="width:70px; height:70px;" src="{{ url('uploads/'.$lesson->image.'/') }}" />  </td>
                                                             <td> <a href="#" class="" style="color: lightslategray"> {{ $lesson->arname}} </a>  </td>
                                                             {{--  <td>  {{ \App\Models\Structure::with('lessons')->count() }} </td>  --}}
                                                             <td>

@@ -24,10 +24,10 @@ class HomeController extends Controller
 
         $lesson = new Level();
 
-        
         $freeLessons = Level::where(['type'=>'lesson', 'free'=> $lesson->getFreeValue()])->get();
-
-
+        
         return view('bareq_design.index', compact('level','placement','freeLessons'));
+        
     }
 }
+

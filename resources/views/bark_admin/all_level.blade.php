@@ -28,26 +28,30 @@
                                         <div class="card-block">
                                                 
                                             <div class="table-responsive" style="overflow-x:initial;">
-                                                @if($begineer_level !== null)
+                                                
+                                                @if($beginner_level !== null)
+
                                                 <table id="zero-configuration" class="display table nowrap table-striped table-hover" style="width:100%">
                                                     <thead>
                                                         <tr> 
+                                                            <th>الترتيب  </th>
                                                             <th>الصورة  </th>
-                                                            <th>اسم المستوى </th>
+                                                            <th>المستوي المبتدئ </th>
                                                             <th>عدد الدروس</th>
                                                             <th> </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
 
-                                                        <tr onclick="window.location='{{ url('display/lessons/'.$begineer_level->id .'/' ) }}';">
-                                                            <td > <img style="width:70px; height:70px;" src="{{ url('uploads/'.$begineer_level->image.'/') }}" />  </td>
-                                                            <td> <a href="{{ url('display/lessons/'.$begineer_level->id  ) }}" class="" style="color: lightslategray"> {{ $begineer_level->arname}} </a>  </td>
-                                                            <td>  {{ \App\Models\Structure::where(['type'=> 'lessons','parent_id' => $begineer_level->id])->count() }} </td>
+                                                        <tr onclick="window.location='{{ url('display/lessons/'.$beginner_level->id .'/' ) }}';">
+                                                            <td > {{ $beginner_level->sort }}  </td>
+                                                            <td > <img style="width:70px; height:70px;" src="{{ url('uploads/'.$beginner_level->image.'/') }}" />  </td>
+                                                            <td> <a href="{{ url('display/lessons/'.$beginner_level->id  ) }}" class="" style="color: lightslategray"> {{ $beginner_level->arname}} </a>  </td>
+                                                            <td>  {{ \App\Models\Structure::where(['type'=> 'lesson','parent_id' => $beginner_level->id])->count() }} </td>
                                                             <td>
-                                                            <button type="button" class="btn btn-danger" style=" float: left;" title="btn btn-danger" > <a href="{{ route('structure.delete' , $begineer_level->id)}}" class="" style="color: ivory">حذف المستوي </a> </button>
-                                                            <button type="button" class="btn btn-success" style=" float: left;" title="btn btn-success" ><a href="{{url('structureCreate/lesson'.'/'.$begineer_level->id)}}" class="" style="color: ivory">اضافه درس</a></button>
-                                                            <button type="button" class="btn btn-success" style=" float: left;" title="btn btn-success" ><a href="{{ url('edit/beginnerLevel/'.$begineer_level->id  ) }}" class="" style="color: ivory">تعديل المستوى</a></button>
+                                                            <button type="button" class="btn btn-danger" style=" float: left;" title="btn btn-danger" > <a href="{{ route('structure.delete' , $beginner_level->id)}}" class="" style="color: ivory">حذف المستوي </a> </button>
+                                                            <button type="button" class="btn btn-success" style=" float: left;" title="btn btn-success" ><a href="{{url('structureCreate/lesson'.'/'.$beginner_level->id)}}" class="" style="color: ivory">اضافه درس</a></button>
+                                                            <button type="button" class="btn btn-success" style=" float: left;" title="btn btn-success" ><a href="{{ url('edit/beginnerLevel/'.$beginner_level->id  ) }}" class="" style="color: ivory">تعديل المستوى</a></button>
                                                             </td>
                                                         </tr>
 
@@ -58,6 +62,7 @@
                                                 <table id="zero-configuration" class="display table nowrap table-striped table-hover" style="width:100%">
                                                     <thead>
                                                         <tr> 
+                                                            <th>الترتيب  </th>
                                                             <th>الصورة  </th>
                                                             <th>اسم المستوى </th>
                                                             <th>عدد الوحدات</th>
@@ -71,6 +76,7 @@
                                                         @foreach ($structure as $level)           
                                                            
                                                             <tr onclick="window.location='{{ url('display/units/'.$level->id  ) }}';">
+                                                                <td > {{ $level->sort }}  </td>
                                                                 <td > <img style="width:70px; height:70px;" src="{{ url('uploads/'.$level->image.'/') }}" />  </td>
                                                                 <td> <a href="{{ url('display/units/'.$level->id  ) }}" class="" style="color: lightslategray"> {{ $level->arname}} </a>  </td>
                                                                 <td>  {{ \App\Models\Structure::where(['type'=> 'unit','parent_id' => $level->id])->count() }} </td>

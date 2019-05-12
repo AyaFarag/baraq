@@ -15,7 +15,7 @@ class UnitController extends Controller
     {
       
         $Unit = Unit::where(['parent_id' =>$level, 'type' => 'unit'] )->orderBy('sort', 'asc')->get();
-        
-        return view('bareq_design.unit' , compact('Unit' ));
+
+        return view('bareq_design.unit' , compact('Unit','unit_count'));
     }
 }

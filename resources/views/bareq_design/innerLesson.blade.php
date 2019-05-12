@@ -4,7 +4,7 @@
 @include('bareq_design.layouts.contentHeader')
 
     <section id="innerLesson" class="tabbable">
-        <div class="inner_header" style="margin-top:30px;background-color:{{ $Lesson->color1 }} " >
+        <div class="inner_header" style="margin-top:30px;background-color:{{ $unit }} " >
             <h1>
                 
                 <span>الدرس الأول</span>

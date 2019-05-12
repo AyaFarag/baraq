@@ -35,7 +35,7 @@
     <div class="col-md-12">
         <div class="form-group">
             @if($parent_id!=null)
-            <input type="hidden" class="form-control"  aria-describedby="parent_id"   name="parent_id" value="{{$parent_id}}">
+            <input type="text" class="form-control"  aria-describedby="parent_id"   name="parent_id" value="{{$parent_id}}">
             @endif
         </div>
     </div>
@@ -45,7 +45,7 @@
             <label class="form-label">الترتيب </label>
             <select class="form-control" name='sort' value="{{(isset($structure))? $structure->sort:old('sort')}}" style="display:block">
                    
-                    <option value="0">0</option>
+                   
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

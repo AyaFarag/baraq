@@ -9,16 +9,20 @@
             <div class="card-header">
                 @if($type == "level")
                 <h5> إضافه مستوي </h5>
+                
                 @elseif($type == "beginnerLevel")
                 <h5> إضافه مستوي تمهيدي  </h5>
                 @elseif($type == "unit")
+                
                 <h5> إضافه وحدة </h5>
+                
                 @elseif($type == "lesson")
                 <h5> إضافه درس </h5>
+                
                 @endif
-
+                
+                <a href="{{ url('structureCreate') }}" class="btn btn-danger float-right">عودة</a>
                
-                <a href="{{ url('back') }}" class="btn btn-danger float-right">عودة</a>
             </div>
 
             

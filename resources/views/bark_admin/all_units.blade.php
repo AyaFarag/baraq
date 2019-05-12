@@ -28,6 +28,8 @@
                                                 <table id="zero-configuration" class="display table nowrap table-striped table-hover" style="width:100%">
                                                     <thead>
                                                         <tr>
+                                                            <th>الترتيب  </th>
+                                                            <th>الصورة  </th>
                                                             <th>اسم الوحدة </th>
                                                             <th>عدد الدروس</th>
                                                             <th> </th>
@@ -37,6 +39,8 @@
                                                         @foreach ($unit as $unit)
                                                             
                                                         <tr onclick="window.location='{{ url('display/lessons/'.$unit->id  ) }}';">
+                                                            <td > {{ $unit->sort }}  </td>
+                                                            <td > <img style="width:70px; height:70px;" src="{{ url('uploads/'.$unit->image.'/') }}" />  </td>
                                                             <td> <a href="{{ url('display/lessons/'.$unit->id  ) }}" class="" style="color: lightslategray"> {{ $unit->arname}} </a>  </td>
                                                             <td> {{ \App\Models\Structure::where(['parent_id' => $unit->id])->count() }} </td>
                                                             <td>

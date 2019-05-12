@@ -12,12 +12,20 @@
 
                     @if($structure->type == "level")
                     <h5> تعديل المستوي </h5>
+                    <a href="{{ url('structureCreate') }}" class="btn btn-danger float-right">عودة</a>
+                    @elseif($type == "beginnerLevel")
+                    <h5> إضافه مستوي تمهيدي  </h5>
+                    <a href="{{ url('structureCreate') }}" class="btn btn-danger float-right">عودة</a>
                     @elseif($structure->type == "unit")
                     <h5> تعديل الوحدة </h5>
+                    <a href="{{ url('structureCreate') }}" class="btn btn-danger float-right">عودة</a>
                     @elseif($structure->type == "lesson")
                     <h5> تعديل الدرس </h5>
+                    <a href="{{ url('structureCreate') }}" class="btn btn-danger float-right">عودة</a>
+                    
                     @endif
-                    <a href="{{ url('/back/units/'.$id.'/') }}" class="btn btn-danger float-right">عودة</a>
+
+                    
             </div>
             <div class="card-block">
                 <form id="validation-form123" action="{{ route('update.structure', $structure->id) }}" method="POST" enctype="multipart/form-data">

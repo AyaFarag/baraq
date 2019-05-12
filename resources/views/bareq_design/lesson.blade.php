@@ -7,7 +7,7 @@
 
 
     <section id="lessons">
-        <div class="lesson_header" style="margin-top:30px">
+        <div class="lesson_header" style="margin-top:30px;background-color:{{ $unit }}">
             <h1>
                 <span>الدروس</span>
             </h1>

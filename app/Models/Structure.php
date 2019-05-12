@@ -30,7 +30,7 @@ class Structure extends Model
     const LEVEL_TYPE = 'level';
     const UNIT_TYPE = 'unit';
     const LESSON_TYPE = 'lesson';
-
+    
     
     protected $freeValue = 1;
     protected $paidValue = 0;
@@ -88,4 +88,15 @@ class Structure extends Model
     {
         return $this->hasMany(LevelPlacementTest::class, 'level_id');
     }
+    
+// public function addSort(){
+
+// }
+//     public function getOrderAttribute($sort=0)
+// {
+        
+//             return ++$sort;
+        
+   
+// }
 }

@@ -19,6 +19,9 @@
                 @if($Unit->count() == 0 )
                 <h1 class="text-center"> لم يتم إضافة وحدات لهذا المستوي بعد </h1>
                 @endif
+                @php
+                $sort=1;
+                @endphp
                 @foreach($Unit as $unit)
                 <a href="{{ route('web.lesson', $unit->id)}}">
                     <div class="col-md-4 wow animated zoomIn animated animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s;"
@@ -31,7 +34,10 @@
                             <!-- row -->
                         </div>
                     <div class="num">
-                        <h4>{{ $unit->sort }}</h4>
+                        
+                        
+                        <h4>{{ $sort++ }}</h4>
+                       
                     </div>  
                 </div>
             </a>

@@ -18,7 +18,7 @@
                 @foreach ($contentRequired as $content)
                 <div class="col-md-3" data-wow-delay="0.1s">
                     <figure>
-                        <img class="pro img-responsive center-block" src="{{ url('/design/assets/img/watch.png') }}" onclick='appendFileContentToDiv({{$content->file->fileType}},"{{ ($content->file->pathType!=2)?$content->file->path:url('uploads/'.$content->file->path)}}")'>
+                        <img class="pro img-responsive center-block" src="{{ url('/design/assets/img/watch.png') }}" onclick='appendFileContentToDiv({{$content->file->fileType}},"{{ ($content->file->pathType!=2)?$content->file->path:url('uploads/'.$content->file->path)}}",{{$content->id}})'>
                     </figure>
                     <h5 class="text-center">{{ $content->	arName }}</h5>
                 </div>
@@ -38,7 +38,7 @@
                 
                 @foreach ($contentNotRequired as $content)
 
-                <div class="col-md-2" data-wow-delay="0.1s" onclick='appendFileContentToDiv({{ $content->file->fileType }},"{{ ($content->file->pathType!=2)?$content->file->path:url('uploads/'.$content->file->path)}}")'>
+                <div class="col-md-2" data-wow-delay="0.1s" onclick='appendFileContentToDiv({{ $content->file->fileType }},"{{ ($content->file->pathType!=2)?$content->file->path:url('uploads/'.$content->file->path)}}",{{$content->id}})'>
                     
                         <figure>
                             <img class="pro img-responsive center-block" src="{{ url('/uploads/logo/'. $content->logo. '/') }}">
@@ -52,9 +52,23 @@
         </div>
         <!-- #tabs -->
     </section>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
-            function appendFileContentToDiv(contentType, FilePath) {
+            function appendFileContentToDiv(contentType, FilePath,tab_id) {
+                var tab_id=tab_id;
+                var user_id='{{auth()->id()}}';
+                $.ajax({
+                    type:'POST',
+                    url: '{{url('assgin/tab/ajax')}}',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                       tab_id:tab_id,
+                       user_id:user_id,
+                    },
+                    success: function (res) {
+                       // console.log(res);
+                    }
+                });
                 $('#viewContentByFileType').empty();
     
     

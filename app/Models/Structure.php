@@ -7,7 +7,7 @@ use App\Models\User            as User;
 use App\Models\QuizeLesson     as Quiz;
 use App\Models\LessonStructure as Lesson;
 use App\Models\StudentHistory  as History;
-use App\Models\Structure       as Structure;
+//use App\Models\Structure       as Structure;
 use App\Models\LessonProgress  as LessonProgress;
 use App\Models\StudentProgress as StudentProgress;
 

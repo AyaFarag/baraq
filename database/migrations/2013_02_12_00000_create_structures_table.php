@@ -26,6 +26,7 @@ class CreateStructuresTable extends Migration
             $table ->integer("parent_id")->unsigned()->nullable();
             $table ->foreign("parent_id")->references('id')->on('structures')->onDelete('cascade');
             $table->string('code');
+            $table->unique(['sort','parent_id']);
             $table->timestamps();
         });
     }

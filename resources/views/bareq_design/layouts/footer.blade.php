@@ -61,6 +61,14 @@
     <!-- Footer Scripts
     ============================================= -->
     <script type="text/javascript" src="{{ url('/design/assets/js/functions.js') }}"></script>
+<script>
+    $( document ).ready(function() {
+        setTimeout(function(){
+            $('div.alert').remove();
+        }, 2000);
+    });
+</script>
+
 
 </body>
 

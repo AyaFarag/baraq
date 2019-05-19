@@ -20,7 +20,7 @@
                     </tr>
                     @foreach($student_history as $student_history)
                         <a href="">
-                        <tr onclick="window.location='{{ route('student.history', $student_history->user_id ) }}';">
+                        <tr onclick="window.location='{{ route('student.profile', $student_history->user_id ) }}';">
                             <td>{{ $student_history->name }}</td>
                             <td>{{ $student_history->arname }}</td>
                         </tr>

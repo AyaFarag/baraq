@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\Structure;
+use App\Models\StudentProgress;
+use App\Models\UnitProgress;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Structure as          Level;
@@ -28,7 +31,7 @@ class PlacementTestController extends Controller
         
     }
 
-    public function savePlacementTestScoreForUser($userScore = 4, $testResult){
+    public function savePlacementTestScoreForUser($userScore = 4, $testResult, $level_id){
 
        if($userScore < 8){
 
@@ -39,13 +42,23 @@ class PlacementTestController extends Controller
                 $placementTest->score = $userScore;
                 $placementTest->total = $testResult;
                 $placementTest->save();
-            
+            $current_level_id=session()->get('placementTestLevelId');
                 $data = [];
                 $data['level_id'] = session()->get('placementTestLevelId');
                 $data['user_id'] = auth()->user()->id;
                 $data['updated_at'] = Carbon::now();
                 $data['created_at'] = Carbon::now();
                 $student_history = DB::table('student_histories')->insert($data);
+                $firstUnit=Structure::where(['type'=>'unit','parent_id'=>$current_level_id])->orderBy('sort','asc')->first();
+                $firstLesson=Structure::where(['type'=>'lesson','parent_id'=>$firstUnit->id])->orderBy('sort','asc')->first();
+                $dataU['unit_id']=$firstUnit->id;
+                $dataU['user_id']=auth()->id();
+                $dataU['status']=0;
+                UnitProgress::create($dataU);
+               $dataL['lesson_id']=$firstLesson->id;
+               $dataL['user_id']=auth()->id();
+               $dataL['status']=0;
+           StudentProgress::create($dataL);
             // });
        
             return response()->json( [

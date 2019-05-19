@@ -14,9 +14,9 @@
 $UserObject = resolve('User');
 $structure = resolve('Structure');
 
+Route::post('assgin/tab/ajax', 'Web\LessonController@assignTab');
+Route::get('nextLesson/{lesson_id}', 'Web\LessonController@nextLesson');
 Route::get('/', 'Web\HomeController@index') -> name('Web.home');
-
-
 
 
 // placement
@@ -91,14 +91,12 @@ Route::group(['middleware' => ['auth', 'role:' . $UserObject->getParentValue()]]
 Route::group(['middleware' => ['auth', 'role:' . $UserObject->getStudentValue()]], function () {
 
 
-    Route::get('student/profile', 'Web\StudentController@student_profile')->name('student.profile');
-
     Route::get('asign/parent', 'ParentController@asignParentForm')->name('asign.parent');
     Route::post('send/parent/invitation/{user}', 'ParentController@sendParentInvitation')->name('parent.invitation');
 
 });
 
-
+Route::get('student/profile/{student_id?}', 'Web\StudentController@student_profile')->name('student.profile')->middleware('publicUser','auth');
 Route::get('parent/approve/{childId}/{email}', 'ParentController@parentApprove')->name('parent.approve');
 Route::post('asign/parent/login/{childId}/{email}', 'ParentController@loginAndAsignParent')->name('loginAndAsignParent');
 Route::get('parentHome', 'ParentController@parentHome');

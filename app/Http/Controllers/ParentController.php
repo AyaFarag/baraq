@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StudentHistory;
+use App\Models\StudentProgress;
 use DB;
 use Validator;
 use App\User as User;
@@ -71,13 +73,16 @@ class ParentController extends Controller
         $parent_students_id = DB::table('user_parent')
                               ->where('parent_id', auth()->user()->id)->pluck('student_id'); 
 
-        $student_history =    DB::table('student_histories')
+        $student_history =
+//            StudentHistory::whereIn('user_id',$parent_students_id)->get();
+
+            DB::table('student_histories')
                               ->join('user_parent', 'student_histories.user_id', '=', 'user_parent.student_id')
                               ->join('structures', 'student_histories.level_id', '=', 'structures.id')
                               ->join('users', 'student_histories.user_id', '=', 'users.id')
-                              ->get(); 
+                              ->get();
         
-        // dd($student_history);
+//         dd($student_history);
      
 
         return view('Asign.parent_account', compact('student_history'));

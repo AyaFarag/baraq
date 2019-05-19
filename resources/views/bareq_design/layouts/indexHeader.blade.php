@@ -104,4 +104,4 @@
     </ul>
 </div>
 <!-- #header end -->
-
+@include('bareq_design.layouts.msg')

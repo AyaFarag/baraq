@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\StudentProgress;
+use App\Models\StudentProgress;
 use Illuminate\Http\Request;
 
 class StudentProgressController extends Controller
@@ -15,6 +15,13 @@ class StudentProgressController extends Controller
     public function index()
     {
         //
+    }
+    public function assignLesson($lesson_id){
+        $data['user_id']=auth()->id();
+        $data['lesson_id']=$lesson_id;
+        $data['status']=0;
+        StudentProgress::create($data);
+
     }
 
     /**

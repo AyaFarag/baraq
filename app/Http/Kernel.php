@@ -63,6 +63,7 @@ class Kernel extends HttpKernel
         'role' => \App\Http\Middleware\role::class,
         'free' => \App\Http\Middleware\Free::class,
         'school' => \App\Http\Middleware\School::class,
+        'publicUser' => \App\Http\Middleware\PublicUser::class,
     ];
 
     /**

@@ -30,7 +30,7 @@ class Free
             }
             elseif( $Structure -> free == $Structure->getPaidValue())
             {
-                return back();
+                return back()->withErrors('هذا الدرس غير مجانى');
             }
         }
         else

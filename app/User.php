@@ -88,6 +88,14 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Level::class,'student_histories','user_id', 'level_id');
     }
+    public function parent()
+    {
+        return $this->hasMany( User::class,'parent_id');
+    }
+    public function student()
+    {
+        return $this->hasMany( User::class,'student_id');
+    }
 
     public function test()
     {

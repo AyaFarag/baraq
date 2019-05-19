@@ -19,7 +19,13 @@
                 @if($Lesson->count() == 0 )
                 <h1 class="text-center"> لم يتم إضافة دروس لهذا المستوي بعد </h1>
                 @endif
-                
+                    <?php
+                    $role=new \App\User();
+                    if(auth()->check()&&auth()->user()->role==$role->getStudentValue()){
+                        $completeLesson=\App\Models\StudentProgress::where(['user_id'=>auth()->id(),'status'=>1])->get()->pluck('lesson_id')->toArray();
+                        $notCompleteLesson=\App\Models\StudentProgress::where(['user_id'=>auth()->id(),'status'=>0])->get()->pluck('lesson_id')->toArray();
+                    }
+                    ?>
                 @foreach($Lesson as $lesson)
                 
                     <div class="complete col-md-12" onclick="window.location='{{ route('content', $lesson->id ) }}';" style="cursor: pointer">
@@ -41,6 +47,15 @@
                                                     <a href="innerLesson.html" class="colrhvr">
                                                             {{ $lesson->arname }} </a>
                                                 </h2>
+                                                @if(auth()->check()&&auth()->user()->role==$role->getStudentValue())
+                                                    @if(in_array($lesson->id,$notCompleteLesson))
+                                                        <i class="fa fa-unlock fa-2x" style="color: #99873c"></i>
+                                                    @elseif(in_array($lesson->id,$completeLesson))
+                                                        <i class="fa fa-check-circle fa-2x" style="color: forestgreen;"></i>
+                                                    @else
+                                                        <i class="fa fa-lock fa-2x" style="color: #740D0A"></i>
+                                                    @endif
+                                                @endif
                                                 <ul class="listoption">
                                                     <li>
                                                         <div class="cs-rating">

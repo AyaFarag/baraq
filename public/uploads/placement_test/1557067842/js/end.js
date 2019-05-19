@@ -69,7 +69,7 @@ var arr = url.split(":");
 var p = arr[0];
 var ws_path = p + "://" + document.domain + "/asl/ws/";
 
-var url = "http://"+window.location.hostname+":1234/baraq/public/placement/test/" + studScore + "/" + maxScore + "/1"
+var url = "http://"+window.location.hostname+"/baraq/public/placement/test/" + studScore + "/" + maxScore + "/1"
 
 console.log(url)
 xhttp.open("GET", url, true);
